@@ -41,3 +41,9 @@ Building projects related to:
 ![stats](https://github-readme-stats.vercel.app/api?username=YOURUSERNAME&show_icons=true&theme=dark)
 
 ![activity graph](https://github-readme-activity-graph.vercel.app/graph?username=YOURUSERNAME&theme=github-dark)
+
+linux-security-audit
+ssh-bruteforce-detector
+bash-log-analyzer
+firewall-hardening-lab
+cloud-security-notes
