@@ -22,3 +22,6 @@ Current focus:
 ## 📊 GitHub Stats
 
 ![stats](https://github-readme-stats.vercel.app/api?username=NayanKumar-ops&show_icons=true&theme=dark)
+## 📈 Activity Graph
+
+![graph](https://github-readme-activity-graph.vercel.app/graph?username=NayanKumar-ops&theme=github-dark)
