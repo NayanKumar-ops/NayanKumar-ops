@@ -1,4 +1,4 @@
-<!--
+
   ███╗   ██╗ █████╗ ██╗   ██╗ █████╗ ███╗   ██╗██╗  ██╗██╗   ██╗███╗   ███╗ █████╗ ██████╗
   ████╗  ██║██╔══██╗╚██╗ ██╔╝██╔══██╗████╗  ██║██║ ██╔╝██║   ██║████╗ ████║██╔══██╗██╔══██╗
   ██╔██╗ ██║███████║ ╚████╔╝ ███████║██╔██╗ ██║█████╔╝ ██║   ██║██╔████╔██║███████║██████╔╝
@@ -21,10 +21,5 @@
   </a>
 </p>
 
-<!-- PROFILE VIEWS (OPTIONAL) -->
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=NayanKumar-ops&label=PROFILE+VIEWS&color=blueviolet&style=for-the-badge" alt="NayanKumar-ops" />
-</p>
 
-<br/>
 
