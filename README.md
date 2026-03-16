@@ -12,3 +12,10 @@ Current focus:
 • Bash automation  
 • Cloud security fundamentals  
 • Infrastructure hardening
+## ⚙️ Tech Stack
+
+![Linux](https://img.shields.io/badge/Linux-black?logo=linux)
+![Bash](https://img.shields.io/badge/Bash-grey?logo=gnu-bash)
+![Git](https://img.shields.io/badge/Git-orange?logo=git)
+![Docker](https://img.shields.io/badge/Docker-blue?logo=docker)
+![AWS](https://img.shields.io/badge/AWS-black?logo=amazonaws)
