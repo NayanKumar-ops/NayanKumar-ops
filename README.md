@@ -17,6 +17,6 @@
 <!-- DYNAMIC HEADER WITH TYPING EFFECT -->
 <p align="center">
   <a href="https://github.com/NayanKumar-ops">
-    <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8A2BE2,25:4B0082,50:00BFFF,75:FF69B4,100:FFA500&height=250&section=header&text=NayanKumar-ops&fontSize=70&fontAlignY=35&desc=Future%20Cloud%20Security%20Architect%20%7C%20Cloud%20Native%20%7C%20Automation&descAlignY=55&animation=twinkling&fontColor=ffffff&stroke=000000&strokeWidth=1" />
+    <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=NayanKumar-ops&fontSize=70&fontAlignY=35&desc=Future%20Cloud%20Security%20Architect%20%7C%20Cloud%20Native%20%7C%20Automation&descAlignY=55&animation=twinkling" />
   </a>
 </p>
