@@ -34,3 +34,10 @@ Building projects related to:
 - Firewall automation
 - Log monitoring
 - Cloud security labs
+
+
+## GitHub Stats
+
+![stats](https://github-readme-stats.vercel.app/api?username=YOURUSERNAME&show_icons=true&theme=dark)
+
+![activity graph](https://github-readme-activity-graph.vercel.app/graph?username=YOURUSERNAME&theme=github-dark)
