@@ -18,7 +18,7 @@
 <!-- DYNAMIC HEADER WITH TYPING EFFECT -->
 <p align="center">
   <a href="https://github.com/NayanKumar-ops">
-    <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=NayanKumar-ops&fontSize=70&fontAlignY=35&desc=Future%20Cloud%20Security%20Architect%20%7C%20Automation%20%7C%202100&descAlignY=55&animation=twinkling" />
+    <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=NayanKumar-ops&fontSize=70&fontAlignY=35&desc=cloud%20security%20atritech&descAlignY=55&animation=twinkling" />
   </a>
 </p>
 
