@@ -14,40 +14,12 @@
                          ╚═╝     ╚═════╝ ╚═╝     ╚══════╝
 -->
 
-<!-- DYNAMIC HEADER WITH TYPING EFFECT -->
-<p align="center">
-  <a href="https://github.com/NayanKumar-ops">
-    <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=NayanKumar-ops&fontSize=70&fontAlignY=35&desc=DevOps%20Engineer%20%7C%20Cloud%20Native%20%7C%20Automation&descAlignY=55&animation=twinkling" />
-  </a>
-</p>
-
-
-
-<!--
-  ░█████╗░██╗░░░░░░█████╗░██╗░░░██╗██████╗░  ░██████╗███████╗░█████╗░██╗░░░██╗██████╗░██╗████████╗██╗░░░██╗
-  ██╔══██╗██║░░░░░██╔══██╗██║░░░██║██╔══██╗  ██╔════╝██╔════╝██╔══██╗██║░░░██║██╔══██╗██║╚══██╔══╝╚██╗░██╔╝
-  ██║░░╚═╝██║░░░░░██║░░██║██║░░░██║██║░░██║  ╚█████╗░█████╗░░██║░░╚═╝██║░░░██║██████╔╝██║░░░██║░░░░╚████╔╝░
-  ██║░░██╗██║░░░░░██║░░██║██║░░░██║██║░░██║  ░╚═══██╗██╔══╝░░██║░░██╗██║░░░██║██╔══██╗██║░░░██║░░░░░╚██╔╝░░
-  ╚█████╔╝███████╗╚█████╔╝╚██████╔╝██████╔╝  ██████╔╝███████╗╚█████╔╝╚██████╔╝██║░░██║██║░░░██║░░░░░░██║░░░
-  ░╚════╝░╚══════╝░╚════╝░░╚═════╝░╚═════╝░  ╚═════╝░╚══════╝░╚════╝░░╚═════╝░╚═╝░░╚═╝╚═╝░░░╚═╝░░░░░░╚═╝░░░
-
-  ╔══════════════════════════════════════════════════════════════════════════════════════════════════════════╗
-  ║                            CLOUD SECURITY ARCHITECT future                            ║
-  ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-
-
-
 
 
 
 -
 
-<!-- GITHUB STATS – FUTURISTIC QUANTUM METRICS -->
-<h2 align="center">📊 QUANTUM METRICS</h2>
 
-<p align="center">
-  <a href="https://github.com/NayanKumar-ops">
-    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=NayanKumar-ops&show_icons=true&theme=synthwave&include_all_commits=true&count_private=true&hide_border=true&bg_color=0d1117&title_color=ff7bff&icon_color=ffb86c&text_color=ffffff" />
     <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=NayanKumar-ops&layout=compact&langs_count=8&theme=synthwave&hide_border=true&bg_color=0d1117&title_color=ff7bff&text_color=ffffff" />
   </a>
 </p>
