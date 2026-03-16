@@ -21,26 +21,7 @@
   </a>
 </p>
 
-<!--
-  ╔═══════════════════════════════════════════════════════════════════╗
-  ║                     NAYANKUMAR-OPS · PROFILE 2100                 ║
-  ║              Where DevOps meets the future – no YAML, all style    ║
-  ╚═══════════════════════════════════════════════════════════════════╝
--->
 
-<!-- DYNAMIC HEADER – HOLOGRAPHIC WAVE -->
-<p align="center">
-  <a href="https://github.com/NayanKumar-ops">
-    <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=250&section=header&text=NayanKumar-ops&fontSize=70&fontAlignY=35&desc=⚡%20DevOps%20%7C%20Cloud%20Native%20%7C%20Automation%20⚡&descAlignY=55&animation=twinkling" />
-  </a>
-</p>
-
-<!-- PROFILE VIEWS – NEON COUNTER -->
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=NayanKumar-ops&label=PROFILE+VIEWS&color=00ffff&style=for-the-badge" alt="NayanKumar-ops" />
-</p>
-
-<br/>
 
 <!-- TERMINAL-STYLE BIO – NO YAML, PURE ASCII -->
 <details open>
@@ -154,3 +135,27 @@
             build_dir: dist
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+name: Generate snake animation
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: Platane/snk@v2
+        with:
+          github_user_name: NayanKumar-ops
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+      - uses: crazy-max/ghaction-github-pages@v2.1.3
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
