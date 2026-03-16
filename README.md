@@ -19,3 +19,6 @@ Current focus:
 ![Git](https://img.shields.io/badge/Git-orange?logo=git)
 ![Docker](https://img.shields.io/badge/Docker-blue?logo=docker)
 ![AWS](https://img.shields.io/badge/AWS-black?logo=amazonaws)
+## 📊 GitHub Stats
+
+![stats](https://github-readme-stats.vercel.app/api?username=NayanKumar-ops&show_icons=true&theme=dark)
