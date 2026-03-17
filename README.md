@@ -18,8 +18,7 @@
 
 
 
-<img src="https://github-readme-stats.vercel.app/api?username=NayanKumar-ops&show_icons=true&theme=dark&title_color=D4AF37&icon_color=D4AF37&text_color=ffffff&bg_color=0d0d0d&border_color=D4AF37&count_private=true" width="49%" />
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=NayanKumar-ops&theme=dark&background=0d0d0d&border=D4AF37&ring=D4AF37&fire=D4AF37&currStreakNum=ffffff&sideNums=ffffff&currStreakLabel=D4AF37&sideLabels=D4AF37&dates=888888" width="49%" />
+
 
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=NayanKumar-ops&layout=compact&theme=dark&title_color=D4AF37&text_color=ffffff&bg_color=0d0d0d&border_color=D4AF37&langs_count=8" width="49%" />
 
