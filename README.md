@@ -1,4 +1,3 @@
-## 🚀 My Digital Portfolio
+## 🚀 Interactive Experience
 
-Experience my interactive portfolio – a fusion of code and luxury design.  
-[![Portfolio](https://img.shields.io/badge/✨_Live_Portfolio-_NAYAN-gold?style=for-the-badge)](https://nayankumar-ops.github.io)
+[![Cursor Demo](https://img.shields.io/badge/✨_Try_the_Cursor-MAYBACH_NAYAN-gold?style=for-the-badge)](https://nayanKumar-ops.github.io)
