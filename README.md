@@ -1,5 +1,5 @@
 <div align="center">
 
-![cursor](./cursor-animation.svg)
+![cursor]cursor-animation.svg
 
 </div>
