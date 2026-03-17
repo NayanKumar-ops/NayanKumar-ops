@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- ✦ Animated cursor banner — upload cursor-animation.svg to this same repo ✦ -->
-
+ ![cursor](./cursor-animation.svg)
 
 <br/>
 
