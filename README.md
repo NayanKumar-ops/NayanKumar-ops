@@ -20,9 +20,6 @@
 
 
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=NayanKumar-ops&layout=compact&theme=dark&title_color=D4AF37&text_color=ffffff&bg_color=0d0d0d&border_color=D4AF37&langs_count=8" width="49%" />
-
----
 
 
 
