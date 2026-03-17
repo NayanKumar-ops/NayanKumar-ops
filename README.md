@@ -1,6 +1,6 @@
 <div align="center">
 
-![banner](./banner.svg)
+cursor-animation.svg
 
 </div>
 
