@@ -1,5 +1,3 @@
-This is a standalone HTML file designed for your GitHub Pages personal site. It includes a responsive layout, advanced 3D background, custom cursor, and smooth animations — all optimized to impress HR and recruiters. Simply save it as `index.html`, push to a repository, and enable GitHub Pages.
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -510,4 +508,3 @@ This is a standalone HTML file designed for your GitHub Pages personal site. It 
     </script>
 </body>
 </html>
-```
