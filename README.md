@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maybach Nayan · avant‑garde digital</title>
-    
+    <title>Maybach Nayan · digital architect</title>
+    <!-- GitHub Pages ready – single file, all resources over HTTPS -->
+
     <!-- Tailwind (core utilities) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Fonts & enhanced libraries -->
+    <!-- Fonts & libraries -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
-    <!-- Three.js, GSAP + ScrollTrigger -->
+    <!-- Three.js, GSAP + ScrollTrigger, TextPlugin, Lenis smooth scroll -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
-    
-    <!-- smooth scrolling (optional but elevates feel) -->
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
 
     <style>
@@ -118,6 +117,8 @@
         section, header, footer { position: relative; z-index: 5; }
         input, textarea { background: transparent; border-bottom: 1px solid #333; transition: 0.3s; }
         input:focus, textarea:focus { border-bottom-color: #D4AF37; outline: none; }
+        /* hide scrollbar for horizontal work section */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
     </style>
 </head>
 <body class="antialiased selection:bg-maybach-gold selection:text-black">
