@@ -56,34 +56,7 @@
 
 ---
 
-### ✦ Activity Graph
 
-[![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=NayanKumar-ops&bg_color=0d0d0d&color=D4AF37&line=D4AF37&point=ffffff&area=true&border_color=D4AF37)](https://github.com/NayanKumar-ops)
-
----
-
-### ✦ Live Interactive Portfolio
-
-> *Experience the full design — custom gold cursor · 3D animated background · smooth scroll*
-
-[![Portfolio](https://img.shields.io/badge/🚀_ENTER_THE_ATELIER-MAYBACH_NAYAN-D4AF37?style=for-the-badge&labelColor=000000)](https://NayanKumar-ops.github.io)
-
----
-
-### ✦ Connect With Me
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com)
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com)
-[![Email](https://img.shields.io/badge/Email-D4AF37?style=for-the-badge&logo=gmail&logoColor=black)](mailto:your@email.com)
-
-</div>
-
----
-
-<div align="center">
-
-![footer](https://capsule-render.vercel.app/api?type=waving&color=D4AF37&height=100&section=footer&animation=fadeIn)
 
 *"Every line of code is a deliberate stroke, every transition a choreographed emotion."*
 
