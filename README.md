@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- Animated header banner -->
-![header](https://capsule-render.vercel.app/api?type=waving&color=D4AF37&height=200&section=header&text=NAYAN%20KUMAR&fontSize=60&fontColor=000000&fontAlignY=40&desc=Digital%20Architect%20%7C%20UI%2FUX%20%7C%20Full-Stack%20Dev&descAlignY=62&descSize=18&descColor=000000&animation=fadeIn)
+![header](https://capsule-render.vercel.app/api?type=waving&color=D4AF37&height=200&section=header&text=NAYAN%20KUMAR&fontSize=60&fontColor=000000&fontAlignY=40&desc%20%20%7C%20UI%2FUX%20%7C%20Full-%20Dev&descAlignY=62&descSize=18&descColor=000000&animation=fadeIn)
 
 <!-- Typing animation -->
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Cinzel&size=22&pause=1000&color=D4AF37&center=true&vCenter=true&width=700&lines=Crafting+Immersive+Digital+Experiences;Where+Code+Meets+Craftsmanship;UI+%7C+UX+%7C+3D+Web+%7C+Full-Stack;Building+Luxury+Digital+Architectures)](https://git.io/typing-svg)
@@ -19,32 +19,8 @@
 
 ### ✦ Who Am I
 
-```javascript
-const NayanKumar = {
-  name     : "Nayan Kumar",
-  alias    : "Maybach Nayan",
-  role     : "Digital Architect",
-  passion  : "Luxury Web Experiences",
-  location : "India 🇮🇳",
-  skills   : ["UI/UX", "WebGL", "Full-Stack", "3D Web"],
-  mantra   : "Every pixel placed with intent."
-};
-```
 
-- 🔭 Currently crafting **high-end digital experiences**
-- 🌱 Exploring **WebGL · Three.js · GSAP · Motion Design**
-- 💡 Building things where **code meets craftsmanship**
-- ⚡ Fun fact: I believe websites should be **felt**, not just seen
 
-<br clear="right"/>
-
----
-
-<div align="center">
-
-### ✦ Tech Stack
-
-**Languages**
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
