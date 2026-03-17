@@ -1,1 +1,1 @@
-![](https://komarev.com/ghpvc/?username=NayanKumar-ops&color=blueviolet&style=for-the-badge&label=PROFILE+VIEWS)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=NayanKumar-ops&layout=compact&theme=dark)
