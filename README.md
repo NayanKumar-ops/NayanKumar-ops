@@ -1,10 +1,14 @@
+This is a standalone HTML file designed for your GitHub Pages personal site. It includes a responsive layout, advanced 3D background, custom cursor, and smooth animations — all optimized to impress HR and recruiters. Simply save it as `index.html`, push to a repository, and enable GitHub Pages.
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maybach Nayan · digital architect</title>
-    <!-- GitHub Pages ready – single file, all resources over HTTPS -->
+    <meta name="description" content="Digital architect crafting immersive luxury experiences. Explore portfolio, expertise, and visionary work.">
+    <!-- favicon (simple inline) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23D4AF37'>✦</text></svg>">
 
     <!-- Tailwind (core utilities) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -60,6 +64,11 @@
         a, button, .magnetic {
             cursor: none;
         }
+        /* disable custom cursor on touch devices */
+        @media (hover: none) and (pointer: coarse) {
+            * { cursor: auto; }
+            .cursor-dot, .cursor-outline { display: none !important; }
+        }
         /* scrollbar */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #0a0a0a; }
@@ -79,9 +88,6 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-        }
-        .reveal-mask {
-            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
         }
         .marquee {
             white-space: nowrap;
@@ -119,11 +125,17 @@
         input:focus, textarea:focus { border-bottom-color: #D4AF37; outline: none; }
         /* hide scrollbar for horizontal work section */
         .hide-scrollbar::-webkit-scrollbar { display: none; }
+        /* mobile menu (simple) */
+        .mobile-nav { display: none; }
+        .mobile-nav.open { display: flex; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-maybach-gold selection:text-black">
 
-    <!-- preloader (kept) -->
+    <!-- preloader -->
     <div class="loader" id="loader">
         <h1 class="font-display text-4xl md:text-7xl text-maybach-gold tracking-widest mb-4" style="font-family: 'Cinzel';">MAYBACH NAYAN</h1>
         <div class="w-64 h-1 bg-gray-900 rounded-full overflow-hidden">
@@ -131,22 +143,28 @@
         </div>
     </div>
 
-    <!-- advanced custom cursor (hidden on mobile) -->
+    <!-- custom cursor (only on non-touch) -->
     <div class="cursor-dot hidden md:block" id="cursorDot"></div>
     <div class="cursor-outline hidden md:block" id="cursorOutline"></div>
 
     <!-- navigation (mix-blend difference for hero) -->
     <nav class="fixed top-0 w-full z-50 px-6 py-8 flex justify-between items-center mix-blend-difference text-white">
         <a href="#" class="font-display text-2xl md:text-3xl font-black tracking-widest hover:opacity-70 transition">MN.</a>
-        <div class="hidden md:flex space-x-12 font-sans text-xs tracking-[0.2em] uppercase">
+        <div class="hidden md:flex space-x-12 font-sans text-xs tracking-[0.2em] uppercase nav-links">
             <a href="#about" class="nav-link relative group">About<span class="absolute -bottom-1 left-0 w-0 h-px bg-maybach-gold group-hover:w-full transition-all duration-500"></span></a>
             <a href="#work" class="nav-link relative group">Work<span class="absolute -bottom-1 left-0 w-0 h-px bg-maybach-gold group-hover:w-full transition-all duration-500"></span></a>
             <a href="#contact" class="nav-link relative group">Contact<span class="absolute -bottom-1 left-0 w-0 h-px bg-maybach-gold group-hover:w-full transition-all duration-500"></span></a>
         </div>
-        <button class="md:hidden text-white text-2xl">☰</button>
+        <button class="md:hidden text-white text-2xl focus:outline-none" id="menuBtn">☰</button>
     </nav>
+    <!-- mobile menu dropdown -->
+    <div class="mobile-nav fixed top-20 left-0 w-full bg-black/95 backdrop-blur-lg z-40 flex-col items-center py-8 space-y-6 text-white font-sans text-sm tracking-widest uppercase md:hidden" id="mobileMenu">
+        <a href="#about" class="hover:text-maybach-gold" onclick="toggleMenu()">About</a>
+        <a href="#work" class="hover:text-maybach-gold" onclick="toggleMenu()">Work</a>
+        <a href="#contact" class="hover:text-maybach-gold" onclick="toggleMenu()">Contact</a>
+    </div>
 
-    <!-- 3D background (advanced scene) -->
+    <!-- 3D background -->
     <div id="canvas-container"></div>
 
     <!-- hero section with split text & parallax -->
@@ -182,7 +200,7 @@
         </span>
     </div>
 
-    <!-- about section (enhanced reveal) -->
+    <!-- about section -->
     <section id="about" class="py-28 md:py-40 px-6 bg-transparent relative">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div class="about-text-reveal">
@@ -206,7 +224,7 @@
         </div>
     </section>
 
-    <!-- expertise cards (glassmorphism + stagger) -->
+    <!-- expertise cards -->
     <section class="py-24 relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-b from-maybach-dark via-transparent to-maybach-dark pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-6">
@@ -234,7 +252,7 @@
         </div>
     </section>
 
-    <!-- featured work (horizontal scroll effect on desktop) -->
+    <!-- featured work (horizontal scroll) -->
     <section id="work" class="py-24 bg-transparent relative">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="font-serif text-5xl md:text-7xl text-white mb-20 text-center">selected <span class="text-maybach-gold">creations</span></h2>
@@ -279,7 +297,7 @@
         </div>
     </section>
 
-    <!-- contact (elevated with magnetic effect) -->
+    <!-- contact section -->
     <section id="contact" class="py-32 px-6 relative">
         <div class="max-w-3xl mx-auto text-center">
             <p class="text-maybach-gold tracking-[0.3em] uppercase mb-4">initiate dialogue</p>
@@ -308,7 +326,7 @@
         </div>
     </section>
 
-    <!-- footer minimal -->
+    <!-- footer -->
     <footer class="bg-black/80 py-8 px-6 border-t border-gray-900 relative z-10">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
             <span class="font-display text-white text-xl tracking-widest">MN.</span>
@@ -323,6 +341,24 @@
 
     <script>
         (function(){
+            // mobile menu toggle
+            const menuBtn = document.getElementById('menuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            window.toggleMenu = function() {
+                mobileMenu.classList.remove('open');
+            };
+            if (menuBtn) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('open');
+                });
+            }
+            // close mobile menu when clicking a link
+            document.querySelectorAll('#mobileMenu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                });
+            });
+
             // preloader
             window.addEventListener('load', () => {
                 const bar = document.getElementById('loader-bar');
@@ -349,102 +385,106 @@
                 // ---- advanced cursor with magnetic ----
                 const cursorDot = document.getElementById('cursorDot');
                 const cursorOutline = document.getElementById('cursorOutline');
-                document.addEventListener('mousemove', (e) => {
-                    gsap.to(cursorDot, { x: e.clientX, y: e.clientY, duration: 0, overwrite: 'auto' });
-                    gsap.to(cursorOutline, { x: e.clientX, y: e.clientY, duration: 0.4, ease: 'power2.out' });
-                });
-                // magnetic elements
-                document.querySelectorAll('.magnetic, a, button').forEach(el => {
-                    el.addEventListener('mousemove', (e) => {
-                        const rect = el.getBoundingClientRect();
-                        const x = e.clientX - rect.left - rect.width/2;
-                        const y = e.clientY - rect.top - rect.height/2;
-                        gsap.to(el, { x: x*0.2, y: y*0.2, duration: 0.4, ease: 'power2.out' });
-                        gsap.to(cursorOutline, { scale: 1.8, borderColor: '#D4AF37', background: 'rgba(212,175,55,0.1)', duration: 0.2 });
+                if (cursorDot && cursorOutline) {
+                    document.addEventListener('mousemove', (e) => {
+                        gsap.to(cursorDot, { x: e.clientX, y: e.clientY, duration: 0, overwrite: 'auto' });
+                        gsap.to(cursorOutline, { x: e.clientX, y: e.clientY, duration: 0.4, ease: 'power2.out' });
                     });
-                    el.addEventListener('mouseleave', () => {
-                        gsap.to(el, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1,0.3)' });
-                        gsap.to(cursorOutline, { scale: 1, borderColor: 'rgba(212,175,55,0.5)', background: 'transparent' });
+                    // magnetic elements
+                    document.querySelectorAll('.magnetic, a, button').forEach(el => {
+                        el.addEventListener('mousemove', (e) => {
+                            const rect = el.getBoundingClientRect();
+                            const x = e.clientX - rect.left - rect.width/2;
+                            const y = e.clientY - rect.top - rect.height/2;
+                            gsap.to(el, { x: x*0.2, y: y*0.2, duration: 0.4, ease: 'power2.out' });
+                            gsap.to(cursorOutline, { scale: 1.8, borderColor: '#D4AF37', background: 'rgba(212,175,55,0.1)', duration: 0.2 });
+                        });
+                        el.addEventListener('mouseleave', () => {
+                            gsap.to(el, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1,0.3)' });
+                            gsap.to(cursorOutline, { scale: 1, borderColor: 'rgba(212,175,55,0.5)', background: 'transparent' });
+                        });
                     });
-                });
+                }
 
                 // ---- Three.js advanced scene (floating orbs + gold mesh) ----
                 const container = document.getElementById('canvas-container');
-                const scene = new THREE.Scene();
-                scene.background = null;
-                const camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.1, 1000);
-                camera.position.set(0, 2, 18);
-                const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: "high-performance" });
-                renderer.setSize(window.innerWidth, window.innerHeight);
-                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-                container.appendChild(renderer.domElement);
-
-                // lights
-                const ambient = new THREE.AmbientLight(0x404060);
-                const dirLight = new THREE.DirectionalLight(0xffffff, 1);
-                dirLight.position.set(2, 3, 4);
-                scene.add(ambient, dirLight);
-                const goldLight = new THREE.PointLight(0xD4AF37, 2, 20);
-                goldLight.position.set(-2, 1, 4);
-                scene.add(goldLight);
-
-                // main geometry — torus knot with wireframe + inner glow
-                const knotGeo = new THREE.TorusKnotGeometry(2, 0.6, 128, 16);
-                const knotMat = new THREE.MeshStandardMaterial({ color: 0xD4AF37, emissive: 0x332200, wireframe: true, transparent: true, opacity: 0.25 });
-                const knot = new THREE.Mesh(knotGeo, knotMat);
-                scene.add(knot);
-
-                // floating spheres
-                const sphereGroup = new THREE.Group();
-                for (let i = 0; i < 8; i++) {
-                    const geo = new THREE.SphereGeometry(0.3 + Math.random()*0.2, 16);
-                    const mat = new THREE.MeshStandardMaterial({ color: 0xD4AF37, emissive: 0x221100 });
-                    const sphere = new THREE.Mesh(geo, mat);
-                    const angle = (i / 8) * Math.PI*2;
-                    sphere.position.set(Math.cos(angle)*5, Math.sin(angle*2)*1.5, Math.sin(angle)*4 - 2);
-                    sphereGroup.add(sphere);
-                }
-                scene.add(sphereGroup);
-
-                // particles
-                const particleCount = 1200;
-                const posArray = new Float32Array(particleCount*3);
-                for (let i = 0; i < particleCount*3; i+=3) {
-                    posArray[i] = (Math.random()-0.5)*30;
-                    posArray[i+1] = (Math.random()-0.5)*20;
-                    posArray[i+2] = (Math.random()-0.5)*30;
-                }
-                const particleGeo = new THREE.BufferGeometry();
-                particleGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-                const particleMat = new THREE.PointsMaterial({ color: 0xffffff, size: 0.05, transparent: true, opacity: 0.4 });
-                const particles = new THREE.Points(particleGeo, particleMat);
-                scene.add(particles);
-
-                // mouse follow
-                let mouseX = 0, mouseY = 0;
-                document.addEventListener('mousemove', (e) => {
-                    mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-                    mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
-                });
-
-                function animateThree() {
-                    requestAnimationFrame(animateThree);
-                    knot.rotation.x += 0.001;
-                    knot.rotation.y += 0.002 + mouseX*0.003;
-                    sphereGroup.rotation.y += 0.001;
-                    sphereGroup.rotation.x += mouseY*0.002;
-                    particles.rotation.y += 0.0002;
-                    goldLight.position.x = mouseX*4;
-                    goldLight.position.y = mouseY*3;
-                    renderer.render(scene, camera);
-                }
-                animateThree();
-
-                window.addEventListener('resize', () => {
-                    camera.aspect = window.innerWidth/window.innerHeight;
-                    camera.updateProjectionMatrix();
+                if (container) {
+                    const scene = new THREE.Scene();
+                    scene.background = null;
+                    const camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.1, 1000);
+                    camera.position.set(0, 2, 18);
+                    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: "high-performance" });
                     renderer.setSize(window.innerWidth, window.innerHeight);
-                });
+                    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+                    container.appendChild(renderer.domElement);
+
+                    // lights
+                    const ambient = new THREE.AmbientLight(0x404060);
+                    const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+                    dirLight.position.set(2, 3, 4);
+                    scene.add(ambient, dirLight);
+                    const goldLight = new THREE.PointLight(0xD4AF37, 2, 20);
+                    goldLight.position.set(-2, 1, 4);
+                    scene.add(goldLight);
+
+                    // main geometry — torus knot with wireframe + inner glow
+                    const knotGeo = new THREE.TorusKnotGeometry(2, 0.6, 128, 16);
+                    const knotMat = new THREE.MeshStandardMaterial({ color: 0xD4AF37, emissive: 0x332200, wireframe: true, transparent: true, opacity: 0.25 });
+                    const knot = new THREE.Mesh(knotGeo, knotMat);
+                    scene.add(knot);
+
+                    // floating spheres
+                    const sphereGroup = new THREE.Group();
+                    for (let i = 0; i < 8; i++) {
+                        const geo = new THREE.SphereGeometry(0.3 + Math.random()*0.2, 16);
+                        const mat = new THREE.MeshStandardMaterial({ color: 0xD4AF37, emissive: 0x221100 });
+                        const sphere = new THREE.Mesh(geo, mat);
+                        const angle = (i / 8) * Math.PI*2;
+                        sphere.position.set(Math.cos(angle)*5, Math.sin(angle*2)*1.5, Math.sin(angle)*4 - 2);
+                        sphereGroup.add(sphere);
+                    }
+                    scene.add(sphereGroup);
+
+                    // particles
+                    const particleCount = 1200;
+                    const posArray = new Float32Array(particleCount*3);
+                    for (let i = 0; i < particleCount*3; i+=3) {
+                        posArray[i] = (Math.random()-0.5)*30;
+                        posArray[i+1] = (Math.random()-0.5)*20;
+                        posArray[i+2] = (Math.random()-0.5)*30;
+                    }
+                    const particleGeo = new THREE.BufferGeometry();
+                    particleGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+                    const particleMat = new THREE.PointsMaterial({ color: 0xffffff, size: 0.05, transparent: true, opacity: 0.4 });
+                    const particles = new THREE.Points(particleGeo, particleMat);
+                    scene.add(particles);
+
+                    // mouse follow
+                    let mouseX = 0, mouseY = 0;
+                    document.addEventListener('mousemove', (e) => {
+                        mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+                        mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+                    });
+
+                    function animateThree() {
+                        requestAnimationFrame(animateThree);
+                        knot.rotation.x += 0.001;
+                        knot.rotation.y += 0.002 + mouseX*0.003;
+                        sphereGroup.rotation.y += 0.001;
+                        sphereGroup.rotation.x += mouseY*0.002;
+                        particles.rotation.y += 0.0002;
+                        goldLight.position.x = mouseX*4;
+                        goldLight.position.y = mouseY*3;
+                        renderer.render(scene, camera);
+                    }
+                    animateThree();
+
+                    window.addEventListener('resize', () => {
+                        camera.aspect = window.innerWidth/window.innerHeight;
+                        camera.updateProjectionMatrix();
+                        renderer.setSize(window.innerWidth, window.innerHeight);
+                    });
+                }
 
                 // ---- GSAP scroll animations ----
                 // hero split & reveal
@@ -464,10 +504,10 @@
                 // contact form
                 gsap.from('#contact form > *', { scrollTrigger: '#contact', y: 40, opacity: 0, duration: 0.8, stagger: 0.15 });
 
-                // lenis scrolltrigger update
                 ScrollTrigger.refresh();
             }
         })();
     </script>
 </body>
 </html>
+```
