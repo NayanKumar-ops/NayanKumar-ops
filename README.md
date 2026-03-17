@@ -1,7 +1,10 @@
 <div align="center">
 
-<!-- Animated header banner -->
-![header](https://capsule-render.vercel.app/api?type=waving&color=D4AF37&height=200&section=header&text=NAYAN%20KUMAR&fontSize=60&fontColor=000000&fontAlignY=40&desc%20%20%7C%20UI%2FUX%20%7C%20Full-%20Dev&descAlignY=62&descSize=18&descColor=000000&animation=fadeIn)
+<!-- ✦ Animated cursor banner — upload cursor-animation.svg to this same repo ✦ -->
+![cursor](./cursor-animation.svg)
+
+<br/>
+
 
 <!-- Typing animation -->
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Cinzel&size=22&pause=1000&color=D4AF37&center=true&vCenter=true&width=700&lines=Crafting+Immersive+Digital+Experiences;Where+Code+Meets+Craftsmanship;UI+%7C+UX+%7C+3D+Web+%7C+Full-Stack;Building+Luxury+Digital+Architectures)](https://git.io/typing-svg)
@@ -16,10 +19,6 @@
 </div>
 <div align="center">
 
-<!-- ✦ Animated cursor banner — upload cursor-animation.svg to this same repo ✦ -->
-![cursor](./cursor-animation.svg)
-
-<br/>
 
 
 
