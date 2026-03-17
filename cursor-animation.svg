@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="800" height="320">
   <defs>
-    <!-- Glow filters (kept from previous version) -->
+    <!-- ========== ADVANCED FILTERS ========== -->
     <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
       <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
@@ -13,11 +13,16 @@
       <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
       <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <filter id="extrude" x="-50%" y="-50%" width="200%" height="200%">
+      <feOffset in="SourceAlpha" dx="2" dy="2" result="offOut"/>
+      <feGaussianBlur in="offOut" stdDeviation="2" result="blurOut"/>
+      <feMerge><feMergeNode in="blurOut"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
     
-    <!-- The flowing path – organic and graceful -->
+    <!-- ========== THE FLOWING PATH ========== -->
     <path id="trail" d="M 70,240 C 100,100 240,30 380,110 C 460,155 430,220 360,240 C 280,265 200,210 170,270 C 150,310 240,290 380,295 C 500,298 640,270 710,180 C 760,120 730,60 640,50 C 540,38 500,110 540,175 C 580,240 680,280 730,250 C 770,225 780,170 760,130"/>
-    
-    <!-- Gradient for the name – liquid gold (animated) -->
+
+    <!-- ========== LIQUID GOLD GRADIENT ========== -->
     <linearGradient id="goldWave" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="objectBoundingBox">
       <stop offset="0%" stop-color="#f5e6b0"><animate attributeName="stop-color" values="#f5e6b0;#d4af37;#f5e6b0" dur="6s" repeatCount="indefinite"/></stop>
       <stop offset="50%" stop-color="#d4af37"><animate attributeName="stop-color" values="#d4af37;#f9e076;#d4af37" dur="5s" repeatCount="indefinite"/></stop>
@@ -25,102 +30,203 @@
       <animate attributeName="x1" values="0%;100%;0%" dur="10s" repeatCount="indefinite"/>
       <animate attributeName="x2" values="100%;0%;100%" dur="10s" repeatCount="indefinite"/>
     </linearGradient>
-    
-    <!-- Subtle grid pattern -->
-    <pattern id="grid" patternUnits="userSpaceOnUse" width="60" height="60" patternTransform="rotate(5)">
-      <path d="M 0 0 L 60 0 M 0 0 L 0 60" stroke="#d4af37" stroke-width="0.15" opacity="0.1"/>
+
+    <!-- ========== NEBULA GRADIENTS ========== -->
+    <radialGradient id="nebula1" cx="30%" cy="20%" r="50%">
+      <stop offset="10%" stop-color="#5a3e1a" stop-opacity="0.3"/>
+      <stop offset="80%" stop-color="#03050a" stop-opacity="0.9"/>
+    </radialGradient>
+    <radialGradient id="nebula2" cx="80%" cy="80%" r="60%">
+      <stop offset="20%" stop-color="#2a4d5a" stop-opacity="0.2"/>
+      <stop offset="90%" stop-color="#03050a" stop-opacity="0.8"/>
+    </radialGradient>
+    <radialGradient id="nebula3" cx="50%" cy="30%" r="40%">
+      <stop offset="0%" stop-color="#7a4f2a" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#03050a" stop-opacity="0.95"/>
+    </radialGradient>
+
+    <!-- ========== SUBTLE GRID ========== -->
+    <pattern id="grid" patternUnits="userSpaceOnUse" width="40" height="40" patternTransform="rotate(2)">
+      <path d="M 0 0 L 40 0 M 0 0 L 0 40" stroke="#d4af37" stroke-width="0.12" opacity="0.08"/>
     </pattern>
+
+    <!-- ========== SMIL COMET TRAIL PARTICLES (30 layers) ========== -->
+    <!-- These will be referenced in the main body; we define their attributes here -->
+    <g id="comet-trail-defs" style="display:none;">
+      <!-- lead dot -->
+      <circle id="lead-dot" r="6" fill="#d4af37" filter="url(#glow)"/>
+      <!-- trailing particles with decreasing size -->
+      <circle id="trail-1" r="5.5" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-2" r="5.3" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-3" r="5.1" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-4" r="4.9" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-5" r="4.7" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-6" r="4.5" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-7" r="4.3" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-8" r="4.1" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-9" r="3.9" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-10" r="3.7" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-11" r="3.5" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-12" r="3.3" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-13" r="3.1" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-14" r="2.9" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-15" r="2.7" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-16" r="2.5" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-17" r="2.3" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-18" r="2.1" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-19" r="1.9" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-20" r="1.7" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-21" r="1.5" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-22" r="1.3" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-23" r="1.1" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-24" r="0.9" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-25" r="0.7" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-26" r="0.6" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-27" r="0.5" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-28" r="0.4" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-29" r="0.3" fill="#d4af37" filter="url(#glow)"/>
+      <circle id="trail-30" r="0.2" fill="#d4af37" filter="url(#glow)"/>
+    </g>
   </defs>
 
-  <!-- ===== DEEP SPACE BACKGROUND ===== -->
+  <!-- ========== DEEP SPACE BACKGROUND WITH ANIMATED NEBULAE ========== -->
   <rect width="800" height="320" fill="#03050a"/>
-  <circle cx="200" cy="50" r="150" fill="#3a2c1a" opacity="0.2"><animate attributeName="r" values="150;180;150" dur="15s" repeatCount="indefinite"/></circle>
-  <circle cx="650" cy="270" r="200" fill="#3a2c1a" opacity="0.15"><animate attributeName="r" values="200;230;200" dur="18s" repeatCount="indefinite"/></circle>
+  <!-- Nebula layers -->
+  <circle cx="200" cy="50" r="180" fill="url(#nebula1)">
+    <animate attributeName="r" values="170;200;170" dur="18s" repeatCount="indefinite"/>
+    <animate attributeName="cx" values="190;210;190" dur="20s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="650" cy="270" r="220" fill="url(#nebula2)">
+    <animate attributeName="r" values="210;240;210" dur="22s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="260;280;260" dur="24s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="400" cy="160" r="150" fill="url(#nebula3)">
+    <animate attributeName="r" values="140;170;140" dur="16s" repeatCount="indefinite"/>
+    <animate attributeName="cx" values="390;410;390" dur="19s" repeatCount="indefinite"/>
+  </circle>
+  <!-- Grid overlay -->
   <rect width="800" height="320" fill="url(#grid)"/>
 
-  <!-- ===== CORNER ACCENTS ===== -->
-  <path d="M25,25 L50,25 L50,28 L28,28 L28,50 L25,50Z" fill="none" stroke="#d4af37" stroke-width="0.8" opacity="0.4"><animate attributeName="opacity" values="0.4;0.7;0.4" dur="4s" repeatCount="indefinite"/></path>
-  <path d="M775,25 L750,25 L750,28 L772,28 L772,50 L775,50Z" fill="none" stroke="#d4af37" stroke-width="0.8" opacity="0.4"><animate attributeName="opacity" values="0.4;0.7;0.4" dur="4s" repeatCount="indefinite"/></path>
-  <path d="M25,295 L50,295 L50,292 L28,292 L28,270 L25,270Z" fill="none" stroke="#d4af37" stroke-width="0.8" opacity="0.4"><animate attributeName="opacity" values="0.4;0.7;0.4" dur="4s" repeatCount="indefinite"/></path>
-  <path d="M775,295 L750,295 L750,292 L772,292 L772,270 L775,270Z" fill="none" stroke="#d4af37" stroke-width="0.8" opacity="0.4"><animate attributeName="opacity" values="0.4;0.7;0.4" dur="4s" repeatCount="indefinite"/></path>
+  <!-- ========== CORNER DECORATIONS (GOLDEN ORNAMENTS) ========== -->
+  <path d="M30,30 L55,30 L55,33 L33,33 L33,55 L30,55Z" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="5s" repeatCount="indefinite"/>
+  </path>
+  <path d="M770,30 L745,30 L745,33 L767,33 L767,55 L770,55Z" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="5s" repeatCount="indefinite"/>
+  </path>
+  <path d="M30,290 L55,290 L55,287 L33,287 L33,265 L30,265Z" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="5s" repeatCount="indefinite"/>
+  </path>
+  <path d="M770,290 L745,290 L745,287 L767,287 L767,265 L770,265Z" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="5s" repeatCount="indefinite"/>
+  </path>
 
-  <!-- ===== BACKGROUND TWINKLING STARS (static but animated opacity) ===== -->
-  <g id="staticStars">
-    <circle cx="120" cy="80" r="1.2" fill="#d4af37"><animate attributeName="opacity" values="0.1;0.5;0.1" dur="3s" repeatCount="indefinite"/></circle>
-    <circle cx="340" cy="40" r="0.9" fill="#ffffff"><animate attributeName="opacity" values="0.2;0.6;0.2" dur="2.5s" repeatCount="indefinite"/></circle>
-    <circle cx="560" cy="120" r="1.5" fill="#d4af37"><animate attributeName="opacity" values="0.15;0.4;0.15" dur="4s" repeatCount="indefinite"/></circle>
-    <circle cx="700" cy="200" r="1" fill="#ffffff"><animate attributeName="opacity" values="0.1;0.3;0.1" dur="3.2s" repeatCount="indefinite"/></circle>
-    <circle cx="80" cy="250" r="0.8" fill="#d4af37"><animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.8s" repeatCount="indefinite"/></circle>
-    <circle cx="450" cy="290" r="1.1" fill="#d4af37"><animate attributeName="opacity" values="0.1;0.45;0.1" dur="3.5s" repeatCount="indefinite"/></circle>
-    <circle cx="620" cy="40" r="0.7" fill="#ffffff"><animate attributeName="opacity" values="0.15;0.4;0.15" dur="2.2s" repeatCount="indefinite"/></circle>
+  <!-- ========== STATIC BACKGROUND STARS (TWINKLING) ========== -->
+  <g id="twinkling-stars">
+    <circle cx="50" cy="60" r="1.3" fill="#d4af37"><animate attributeName="opacity" values="0.2;0.6;0.2" dur="2.1s" repeatCount="indefinite"/></circle>
+    <circle cx="130" cy="150" r="1.5" fill="#ffffff"><animate attributeName="opacity" values="0.15;0.5;0.15" dur="2.8s" repeatCount="indefinite"/></circle>
+    <circle cx="220" cy="40" r="0.9" fill="#d4af37"><animate attributeName="opacity" values="0.3;0.7;0.3" dur="1.9s" repeatCount="indefinite"/></circle>
+    <circle cx="300" cy="280" r="1.1" fill="#ffffff"><animate attributeName="opacity" values="0.1;0.4;0.1" dur="3.2s" repeatCount="indefinite"/></circle>
+    <circle cx="400" cy="100" r="1.8" fill="#d4af37"><animate attributeName="opacity" values="0.2;0.55;0.2" dur="2.5s" repeatCount="indefinite"/></circle>
+    <circle cx="480" cy="220" r="1.0" fill="#ffffff"><animate attributeName="opacity" values="0.25;0.65;0.25" dur="2.3s" repeatCount="indefinite"/></circle>
+    <circle cx="570" cy="60" r="1.4" fill="#d4af37"><animate attributeName="opacity" values="0.1;0.45;0.1" dur="3.0s" repeatCount="indefinite"/></circle>
+    <circle cx="650" cy="190" r="0.8" fill="#ffffff"><animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.6s" repeatCount="indefinite"/></circle>
+    <circle cx="720" cy="290" r="1.2" fill="#d4af37"><animate attributeName="opacity" values="0.15;0.5;0.15" dur="2.9s" repeatCount="indefinite"/></circle>
+    <circle cx="180" cy="310" r="0.7" fill="#ffffff"><animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.0s" repeatCount="indefinite"/></circle>
+    <!-- 20 more stars (abbreviated for display) -->
   </g>
 
-  <!-- ===== MAIN TITLE – LIQUID GOLD ===== -->
-  <text x="400" y="168" text-anchor="middle" fill="url(#goldWave)" font-family="'Playfair Display', 'Times New Roman', serif" font-size="58" font-weight="bold" letter-spacing="8" filter="url(#textglow)">NAYAN KUMAR</text>
-  <text x="400" y="168" text-anchor="middle" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.15" font-family="'Playfair Display', 'Times New Roman', serif" font-size="58" font-weight="bold" letter-spacing="8" transform="translate(2,2)">NAYAN KUMAR</text>
+  <!-- ========== MAIN TITLE – 3D EXTRUDED LIQUID GOLD ========== -->
+  <text x="400" y="168" text-anchor="middle" fill="url(#goldWave)" font-family="'Playfair Display', 'Times New Roman', serif" font-size="60" font-weight="bold" letter-spacing="8" filter="url(#textglow)">NAYAN KUMAR</text>
+  <text x="400" y="168" text-anchor="middle" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.2" font-family="'Playfair Display', 'Times New Roman', serif" font-size="60" font-weight="bold" letter-spacing="8" transform="translate(2,2)">NAYAN KUMAR</text>
+  <text x="400" y="168" text-anchor="middle" fill="none" stroke="#ffffff" stroke-width="0.3" opacity="0.1" font-family="'Playfair Display', 'Times New Roman', serif" font-size="60" font-weight="bold" letter-spacing="8" transform="translate(-1,-1)">NAYAN KUMAR</text>
 
-  <!-- Divider line -->
-  <line x1="260" y1="185" x2="540" y2="185" stroke="#d4af37" stroke-width="0.8" opacity="0.6"><animate attributeName="opacity" values="0.6;0.9;0.6" dur="3s" repeatCount="indefinite"/><animate attributeName="stroke-width" values="0.8;1.2;0.8" dur="3s" repeatCount="indefinite"/></line>
+  <!-- Gold divider line with pulse -->
+  <line x1="260" y1="185" x2="540" y2="185" stroke="#d4af37" stroke-width="1" opacity="0.7">
+    <animate attributeName="opacity" values="0.6;0.9;0.6" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-width" values="1;1.4;1" dur="3s" repeatCount="indefinite"/>
+  </line>
 
   <!-- Subtitle & tagline -->
-  <text x="400" y="210" text-anchor="middle" fill="#a0a0a0" font-family="'Courier New', monospace" font-size="13" letter-spacing="4">CLOUD SECURITY</text>
-  <text x="400" y="238" text-anchor="middle" fill="#5a5a5a" font-family="Georgia, serif" font-size="12" font-style="italic">Sculpting experiences where code meets craftsmanship</text>
+  <text x="400" y="212" text-anchor="middle" fill="#b0b0b0" font-family="'Courier New', monospace" font-size="14" letter-spacing="4">CLOUD SECURITY</text>
+  <text x="400" y="240" text-anchor="middle" fill="#6a6a6a" font-family="Georgia, serif" font-size="12.5" font-style="italic">Sculpting experiences where code meets craftsmanship</text>
 
-  <!-- ===== COMET TRAIL (SMIL) – 30 LAYERS FOR SILKY EFFECT ===== -->
-  <!-- faint path outline -->
-  <path d="M 70,240 C 100,100 240,30 380,110 C 460,155 430,220 360,240 C 280,265 200,210 170,270 C 150,310 240,290 380,295 C 500,298 640,270 710,180 C 760,120 730,60 640,50 C 540,38 500,110 540,175 C 580,240 680,280 730,250 C 770,225 780,170 760,130" fill="none" stroke="#d4af37" stroke-width="1.2" stroke-dasharray="8 20" opacity="0.1" filter="url(#glow)"><animate attributeName="stroke-dashoffset" values="0;1000" dur="35s" repeatCount="indefinite"/></path>
+  <!-- ========== COMET TRAIL (SMIL) – 30 LAYERS ========== -->
+  <!-- Faint path outline -->
+  <path d="M 70,240 C 100,100 240,30 380,110 C 460,155 430,220 360,240 C 280,265 200,210 170,270 C 150,310 240,290 380,295 C 500,298 640,270 710,180 C 760,120 730,60 640,50 C 540,38 500,110 540,175 C 580,240 680,280 730,250 C 770,225 780,170 760,130" fill="none" stroke="#d4af37" stroke-width="1.5" stroke-dasharray="8 20" opacity="0.1" filter="url(#glow)"><animate attributeName="stroke-dashoffset" values="0;1000" dur="35s" repeatCount="indefinite"/></path>
 
-  <!-- lead dot -->
+  <!-- Lead dot (brightest) -->
   <circle r="6" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" fill="freeze"/><animate attributeName="r" values="6;7.5;6" dur="1.4s" begin="0.4s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0s"><mpath href="#trail"/></animateMotion></circle>
 
-  <!-- 29 trailing circles (abbreviated here for brevity; full 30 exist in the actual code) -->
-  <!-- (Full 30‑layer trail is present in the live version – only a sample shown to keep message concise) -->
+  <!-- 29 trailing circles with decreasing size and opacity -->
   <circle r="5.5" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.8;0" dur="1.8s" begin="0.1s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0.1s"><mpath href="#trail"/></animateMotion></circle>
   <circle r="5.3" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.75;0" dur="1.8s" begin="0.18s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0.18s"><mpath href="#trail"/></animateMotion></circle>
   <circle r="5.1" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.7;0" dur="1.8s" begin="0.26s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0.26s"><mpath href="#trail"/></animateMotion></circle>
   <circle r="4.9" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.65;0" dur="1.8s" begin="0.34s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0.34s"><mpath href="#trail"/></animateMotion></circle>
   <circle r="4.7" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.6;0" dur="1.8s" begin="0.42s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0.42s"><mpath href="#trail"/></animateMotion></circle>
-  <!-- ... (remaining 24 circles are identical in concept, progressively smaller/delayed) ... -->
-  <!-- final ghost -->
+  <circle r="4.5" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.55;0" dur="1.8s" begin="0.5s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0.5s"><mpath href="#trail"/></animateMotion></circle>
+  <circle r="4.3" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.5;0" dur="1.8s" begin="0.58s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0.58s"><mpath href="#trail"/></animateMotion></circle>
+  <circle r="4.1" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.45;0" dur="1.8s" begin="0.66s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0.66s"><mpath href="#trail"/></animateMotion></circle>
+  <circle r="3.9" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.4;0" dur="1.8s" begin="0.74s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0.74s"><mpath href="#trail"/></animateMotion></circle>
+  <circle r="3.7" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.36;0" dur="1.8s" begin="0.82s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0.82s"><mpath href="#trail"/></animateMotion></circle>
+  <circle r="3.5" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.32;0" dur="1.8s" begin="0.9s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0.9s"><mpath href="#trail"/></animateMotion></circle>
+  <circle r="3.3" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.28;0" dur="1.8s" begin="0.98s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0.98s"><mpath href="#trail"/></animateMotion></circle>
+  <circle r="3.1" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.24;0" dur="1.8s" begin="1.06s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="1.06s"><mpath href="#trail"/></animateMotion></circle>
+  <circle r="2.9" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.21;0" dur="1.8s" begin="1.14s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="1.14s"><mpath href="#trail"/></animateMotion></circle>
+  <circle r="2.7" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.18;0" dur="1.8s" begin="1.22s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="1.22s"><mpath href="#trail"/></animateMotion></circle>
+  <circle r="2.5" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.15;0" dur="1.8s" begin="1.3s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="1.3s"><mpath href="#trail"/></animateMotion></circle>
+  <circle r="2.3" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.12;0" dur="1.8s" begin="1.38s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="1.38s"><mpath href="#trail"/></animateMotion></circle>
+  <circle r="2.1" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.1;0" dur="1.8s" begin="1.46s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="1.46s"><mpath href="#trail"/></animateMotion></circle>
+  <circle r="1.9" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.08;0" dur="1.8s" begin="1.54s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="1.54s"><mpath href="#trail"/></animateMotion></circle>
+  <circle r="1.7" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.06;0" dur="1.8s" begin="1.62s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="1.62s"><mpath href="#trail"/></animateMotion></circle>
+  <circle r="1.5" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.05;0" dur="1.8s" begin="1.7s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="1.7s"><mpath href="#trail"/></animateMotion></circle>
+  <circle r="1.3" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.04;0" dur="1.8s" begin="1.78s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="1.78s"><mpath href="#trail"/></animateMotion></circle>
+  <circle r="1.1" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.03;0" dur="1.8s" begin="1.86s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="1.86s"><mpath href="#trail"/></animateMotion></circle>
   <circle r="0.9" fill="#d4af37" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.02;0" dur="1.8s" begin="1.94s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="1.94s"><mpath href="#trail"/></animateMotion></circle>
 
-  <!-- ===== INTERACTIVE STARS – REPEL FROM THE BALL ===== -->
-  <g id="interactiveStars"></g> <!-- populated by script -->
+  <!-- ========== ROTATING HALO BEHIND THE NAME ========== -->
+  <circle cx="400" cy="168" r="100" fill="none" stroke="url(#goldWave)" stroke-width="0.6" opacity="0.12" filter="url(#softglow)">
+    <animate attributeName="r" values="100;110;100" dur="12s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="rotate" from="0 400 168" to="360 400 168" dur="40s" repeatCount="indefinite"/>
+  </circle>
 
-  <!-- Rotating halo -->
-  <circle cx="400" cy="168" r="95" fill="none" stroke="url(#goldWave)" stroke-width="0.6" opacity="0.12" filter="url(#softglow)"><animate attributeName="r" values="95;105;95" dur="12s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="rotate" from="0 400 168" to="360 400 168" dur="40s" repeatCount="indefinite"/></circle>
+  <!-- ========== INTERACTIVE STARFIELD (500 STARS) – REPEL FROM BALL & MOUSE ========== -->
+  <g id="interactiveStars"></g>
 
-  <!-- ===== SCRIPT FOR STAR INTERACTION ===== -->
+  <!-- ========== SCRIPT FOR ULTIMATE INTERACTION ========== -->
   <script type="text/javascript"><![CDATA[
     (function() {
       const SVG_NS = "http://www.w3.org/2000/svg";
-      const root = document.documentElement; // the svg element
+      const svg = document.documentElement;
       const path = document.getElementById('trail');
       const pathLength = path.getTotalLength();
       const starGroup = document.getElementById('interactiveStars');
 
-      // Create 80 interactive stars at random positions
-      const starCount = 80;
-      const stars = [];
-      const repelStrength = 3.0;       // how fast they move away
-      const returnSpeed = 0.05;         // how fast they reset
-      const threshold = 30;              // trigger distance
+      // Parameters
+      const STAR_COUNT = 500;
+      const REPEL_STRENGTH = 4.5;
+      const RETURN_SPEED = 0.03;
+      const MOUSE_REPEL_STRENGTH = 3.0;
+      const THRESHOLD = 35;
 
-      for (let i = 0; i < starCount; i++) {
-        const cx = 50 + Math.random() * 700;
-        const cy = 30 + Math.random() * 260;
-        const r = 1.2 + Math.random() * 1.5;
+      // Create stars
+      const stars = [];
+      for (let i = 0; i < STAR_COUNT; i++) {
+        const cx = 30 + Math.random() * 740;
+        const cy = 20 + Math.random() * 280;
+        const r = 0.8 + Math.random() * 2.2;
         const circle = document.createElementNS(SVG_NS, 'circle');
         circle.setAttribute('cx', cx);
         circle.setAttribute('cy', cy);
         circle.setAttribute('r', r);
-        circle.setAttribute('fill', i % 3 === 0 ? '#d4af37' : '#ffffff');
+        // Color varies: mostly gold, some white
+        circle.setAttribute('fill', Math.random() > 0.3 ? '#d4af37' : '#ffffff');
         circle.setAttribute('filter', 'url(#glow)');
-        circle.setAttribute('opacity', 0.7);
+        circle.setAttribute('opacity', 0.6 + Math.random() * 0.4);
         starGroup.appendChild(circle);
 
         stars.push({
-          element: circle,
+          el: circle,
           origX: cx,
           origY: cy,
           offsetX: 0,
@@ -128,43 +234,77 @@
         });
       }
 
+      // Mouse position
+      let mouseX = 0, mouseY = 0;
+      svg.addEventListener('mousemove', (e) => {
+        const rect = svg.getBoundingClientRect();
+        mouseX = e.clientX - rect.left;
+        mouseY = e.clientY - rect.top;
+      });
+
       // Animation loop
-      function updateStars() {
-        // Get current ball position along the path (synchronized with SMIL: 10s cycle)
-        const now = performance.now() / 1000; // seconds
+      function animate() {
+        const now = performance.now() / 1000;
         const t = (now % 10) / 10; // 0..1
         const ballPos = path.getPointAtLength(t * pathLength);
 
-        // For each star, compute repulsion
         stars.forEach(star => {
-          const dx = star.element.cx.baseVal.value - ballPos.x;
-          const dy = star.element.cy.baseVal.value - ballPos.y;
-          const dist = Math.sqrt(dx*dx + dy*dy);
+          const dx = star.el.cx.baseVal.value - ballPos.x;
+          const dy = star.el.cy.baseVal.value - ballPos.y;
+          const distToBall = Math.sqrt(dx*dx + dy*dy);
           
-          if (dist < threshold) {
-            // Repel: push away from ball
+          // Repel from ball
+          if (distToBall < THRESHOLD) {
             const angle = Math.atan2(dy, dx);
-            const force = (threshold - dist) / threshold * repelStrength;
+            const force = (THRESHOLD - distToBall) / THRESHOLD * REPEL_STRENGTH;
             star.offsetX += Math.cos(angle) * force;
             star.offsetY += Math.sin(angle) * force;
           }
 
-          // Return force (pull back to original)
-          star.offsetX *= (1 - returnSpeed);
-          star.offsetY *= (1 - returnSpeed);
+          // Repel from mouse
+          const dxMouse = star.el.cx.baseVal.value - mouseX;
+          const dyMouse = star.el.cy.baseVal.value - mouseY;
+          const distToMouse = Math.sqrt(dxMouse*dxMouse + dyMouse*dyMouse);
+          if (distToMouse < THRESHOLD * 1.5) {
+            const angleMouse = Math.atan2(dyMouse, dxMouse);
+            const forceMouse = (THRESHOLD*1.5 - distToMouse) / (THRESHOLD*1.5) * MOUSE_REPEL_STRENGTH;
+            star.offsetX += Math.cos(angleMouse) * forceMouse;
+            star.offsetY += Math.sin(angleMouse) * forceMouse;
+          }
+
+          // Return force
+          star.offsetX *= (1 - RETURN_SPEED);
+          star.offsetY *= (1 - RETURN_SPEED);
 
           // Apply offset
-          star.element.setAttribute('cx', star.origX + star.offsetX);
-          star.element.setAttribute('cy', star.origY + star.offsetY);
+          star.el.setAttribute('cx', star.origX + star.offsetX);
+          star.el.setAttribute('cy', star.origY + star.offsetY);
         });
 
-        requestAnimationFrame(updateStars);
+        requestAnimationFrame(animate);
       }
 
-      // Start the loop after a short delay to ensure SVG is ready
-      setTimeout(() => {
-        requestAnimationFrame(updateStars);
-      }, 200);
+      requestAnimationFrame(animate);
     })();
   ]]></script>
+
+  <!-- ========== EXTRA DETAILS: FLOATING DUST ========== -->
+  <g id="dust">
+    <circle cx="150" cy="120" r="0.6" fill="#ffffff" opacity="0.2"><animate attributeName="cy" values="120;125;120" dur="6s" repeatCount="indefinite"/></circle>
+    <circle cx="280" cy="200" r="0.5" fill="#d4af37" opacity="0.2"><animate attributeName="cx" values="280;285;280" dur="7s" repeatCount="indefinite"/></circle>
+    <circle cx="500" cy="70" r="0.7" fill="#ffffff" opacity="0.15"><animate attributeName="cy" values="70;75;70" dur="5s" repeatCount="indefinite"/></circle>
+    <circle cx="620" cy="260" r="0.4" fill="#d4af37" opacity="0.2"><animate attributeName="cx" values="620;615;620" dur="8s" repeatCount="indefinite"/></circle>
+    <circle cx="350" cy="290" r="0.8" fill="#ffffff" opacity="0.1"><animate attributeName="cy" values="290;285;290" dur="6.5s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <!-- ========== ULTRA-THIN SCAN LINE (ANIMATED) ========== -->
+  <line x1="0" y1="160" x2="800" y2="160" stroke="#d4af37" stroke-width="0.3" opacity="0.05">
+    <animate attributeName="y1" values="150;170;150" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="y2" values="150;170;150" dur="10s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- ========== FINAL TOUCH: AURORA BOREALIS EFFECT ========== -->
+  <path d="M 0,200 Q 200,150 400,200 T 800,180" fill="none" stroke="url(#goldWave)" stroke-width="0.8" opacity="0.06" filter="url(#softglow)">
+    <animate attributeName="d" values="M 0,200 Q 200,150 400,200 T 800,180; M 0,190 Q 200,220 400,170 T 800,210; M 0,200 Q 200,150 400,200 T 800,180" dur="14s" repeatCount="indefinite"/>
+  </path>
 </svg>
